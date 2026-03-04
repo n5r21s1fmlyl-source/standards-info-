@@ -150,42 +150,64 @@ if (backToTop) {
 // ===== ニュース RSS取得 =====
 const NEWS_FEEDS = [
   {
-    key: 'jis',
-    label: 'JIS',
-    url: 'https://news.google.com/rss/search?q=JIS+規格&hl=ja&gl=JP&ceid=JP:ja'
+    key: 'ieee',
+    label: 'IEEE Spectrum',
+    url: 'https://spectrum.ieee.org/rss/fulltext'
   },
   {
     key: 'iso',
     label: 'ISO',
-    url: 'https://news.google.com/rss/search?q=ISO+規格+標準化&hl=ja&gl=JP&ceid=JP:ja'
+    url: 'https://news.google.com/rss/search?q=ISO+standards&hl=en&gl=US&ceid=US:en'
   },
   {
     key: 'iec',
     label: 'IEC',
-    url: 'https://news.google.com/rss/search?q=IEC+規格+電気標準&hl=ja&gl=JP&ceid=JP:ja'
+    url: 'https://news.google.com/rss/search?q=IEC+electrical+standards&hl=en&gl=US&ceid=US:en'
   },
   {
-    key: 'ieee',
-    label: 'IEEE',
-    url: 'https://news.google.com/rss/search?q=IEEE+規格+標準&hl=ja&gl=JP&ceid=JP:ja'
+    key: 'jis',
+    label: 'JIS',
+    url: 'https://news.google.com/rss/search?q=JIS+Japanese+industrial+standards&hl=en&gl=US&ceid=US:en'
   }
 ];
 
-const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
-
 async function fetchFeed(feed) {
-  const res = await fetch(RSS2JSON + encodeURIComponent(feed.url));
-  if (!res.ok) throw new Error('fetch failed');
-  const data = await res.json();
-  if (data.status !== 'ok') throw new Error('rss error');
-  return data.items.slice(0, 5).map(item => ({
-    source: feed.key,
-    label: feed.label,
-    title: item.title || '',
-    link: item.link || '',
-    desc: (item.description || '').replace(/<[^>]+>/g, '').trim().slice(0, 120),
-    date: item.pubDate ? new Date(item.pubDate).toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' }) : ''
-  }));
+  const proxies = [
+    u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+    u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`
+  ];
+  let text = null;
+  for (const makeProxy of proxies) {
+    try {
+      const res = await fetch(makeProxy(feed.url), { signal: AbortSignal.timeout(6000) });
+      if (res.ok) { text = await res.text(); break; }
+    } catch (_) {}
+  }
+  if (!text) throw new Error('all proxies failed');
+
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(text, 'text/xml');
+  const items = Array.from(xml.querySelectorAll('item, entry')).slice(0, 5);
+  if (items.length === 0) throw new Error('no items');
+
+  return items.map(item => {
+    const rawDesc = item.querySelector('description, summary')?.textContent || '';
+    const tmp = document.createElement('div');
+    tmp.innerHTML = rawDesc;
+    const desc = tmp.textContent.trim().slice(0, 120);
+    const rawDate = item.querySelector('pubDate, published, updated')?.textContent || '';
+    const date = rawDate ? new Date(rawDate).toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+    const link = item.querySelector('link')?.textContent?.trim()
+      || item.querySelector('link')?.getAttribute('href') || '';
+    return {
+      source: feed.key,
+      label: feed.label,
+      title: item.querySelector('title')?.textContent.trim() || '',
+      link,
+      desc,
+      date
+    };
+  });
 }
 
 async function loadNews() {
