@@ -1235,6 +1235,109 @@ footer a:hover {
 .modal-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; flex: 1; }
 .modal-card .card-official { align-self: flex-start; }
 
+/* ===== モーダル内 詳細規格検索 ===== */
+.modal-detail-search-wrap { margin-bottom: 10px; }
+.modal-detail-search {
+  width: 100%;
+  padding: 9px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  background: var(--bg);
+  outline: none;
+  transition: border-color var(--transition);
+  font-family: inherit;
+}
+.modal-detail-search:focus { border-color: var(--primary-light); }
+.modal-detail-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.modal-detail-filter {
+  padding: 3px 10px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+.modal-detail-filter.active,
+.modal-detail-filter:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.modal-detail-counter {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-align: right;
+}
+.modal-detail-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.modal-detail-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  transition: background var(--transition);
+}
+.modal-detail-item:last-child { border-bottom: none; }
+.modal-detail-item:hover { background: #f5f7fd; }
+.modal-detail-item-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.modal-detail-item-cat {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 1px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.modal-detail-item-name {
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 3px;
+}
+.modal-detail-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+.modal-detail-item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1.5px solid;
+  transition: background var(--transition), color var(--transition);
+}
+.modal-detail-item-link.jis  { color: var(--accent-jis);  border-color: var(--accent-jis);  }
+.modal-detail-item-link.jis:hover  { background: var(--accent-jis);  color: #fff; }
+.modal-detail-item-link.iso  { color: var(--accent-iso);  border-color: var(--accent-iso);  }
+.modal-detail-item-link.iso:hover  { background: var(--accent-iso);  color: #fff; }
+.modal-detail-item-link.iec  { color: var(--accent-iec);  border-color: var(--accent-iec);  }
+.modal-detail-item-link.iec:hover  { background: var(--accent-iec);  color: #fff; }
+.modal-detail-item-link.ieee { color: var(--accent-ieee); border-color: var(--accent-ieee); }
+.modal-detail-item-link.ieee:hover { background: var(--accent-ieee); color: #fff; }
+.modal-detail-empty { text-align: center; padding: 24px; color: var(--text-muted); font-size: 0.85rem; }
+
 /* モーダル内タイムライン */
 .modal-timeline { display: flex; flex-direction: column; gap: 0; margin-top: 4px; }
 .modal-timeline-item {
