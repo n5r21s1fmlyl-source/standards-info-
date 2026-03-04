@@ -150,24 +150,24 @@ if (backToTop) {
 // ===== ニュース RSS取得 =====
 const NEWS_FEEDS = [
   {
-    key: 'ieee',
-    label: 'IEEE Spectrum',
-    url: 'https://spectrum.ieee.org/rss/fulltext'
+    key: 'jis',
+    label: 'JIS',
+    url: 'https://news.google.com/rss/search?q=JIS+日本産業規格&hl=ja&gl=JP&ceid=JP:ja'
   },
   {
     key: 'iso',
     label: 'ISO',
-    url: 'https://news.google.com/rss/search?q=ISO+standards&hl=en&gl=US&ceid=US:en'
+    url: 'https://news.google.com/rss/search?q=ISO+国際規格+標準化&hl=ja&gl=JP&ceid=JP:ja'
   },
   {
     key: 'iec',
     label: 'IEC',
-    url: 'https://news.google.com/rss/search?q=IEC+electrical+standards&hl=en&gl=US&ceid=US:en'
+    url: 'https://news.google.com/rss/search?q=IEC+国際電気標準&hl=ja&gl=JP&ceid=JP:ja'
   },
   {
-    key: 'jis',
-    label: 'JIS',
-    url: 'https://news.google.com/rss/search?q=JIS+Japanese+industrial+standards&hl=en&gl=US&ceid=US:en'
+    key: 'ieee',
+    label: 'IEEE',
+    url: 'https://news.google.com/rss/search?q=IEEE+規格+標準&hl=ja&gl=JP&ceid=JP:ja'
   }
 ];
 
