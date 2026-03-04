@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="overview-box">
+    <div class="overview-box" data-org="jis" role="button" tabindex="0" aria-label="JIS詳細を開く">
       <div class="org-logo-placeholder jis">JIS</div>
       <div>
         <h3>JIS（日本産業規格） — Japanese Industrial Standards</h3>
@@ -72,10 +72,16 @@
           <div class="meta-chip"><span>規格数：</span>約12,000件以上</div>
           <div class="meta-chip"><span>制定開始：</span>1949年</div>
         </div>
+        <div class="official-links" onclick="event.stopPropagation()">
+          <a class="official-link jis" href="https://www.jisc.go.jp/" target="_blank" rel="noopener">🌐 JISC公式サイト</a>
+          <a class="official-link jis" href="https://webdesk.jsa.or.jp/" target="_blank" rel="noopener">📄 JIS規格票閲覧（JSA）</a>
+          <a class="official-link jis" href="https://www.meti.go.jp/policy/economy/hyojun-kijun/index.html" target="_blank" rel="noopener">🏛 経済産業省</a>
+        </div>
+        <button class="more-btn">分類・主要規格を見る ▶</button>
       </div>
     </div>
 
-    <div class="overview-box">
+    <div class="overview-box" data-org="iso" role="button" tabindex="0" aria-label="ISO詳細を開く">
       <div class="org-logo-placeholder iso">ISO</div>
       <div>
         <h3>ISO（国際標準化機構） — International Organization for Standardization</h3>
@@ -87,10 +93,16 @@
           <div class="meta-chip"><span>規格数：</span>25,000件以上</div>
           <div class="meta-chip"><span>日本代表：</span>JISC</div>
         </div>
+        <div class="official-links" onclick="event.stopPropagation()">
+          <a class="official-link iso" href="https://www.iso.org/" target="_blank" rel="noopener">🌐 ISO公式サイト</a>
+          <a class="official-link iso" href="https://www.iso.org/standards.html" target="_blank" rel="noopener">📄 規格一覧</a>
+          <a class="official-link iso" href="https://www.iso.org/store.html" target="_blank" rel="noopener">🛒 ISO規格購入</a>
+        </div>
+        <button class="more-btn">分類・主要規格を見る ▶</button>
       </div>
     </div>
 
-    <div class="overview-box">
+    <div class="overview-box" data-org="iec" role="button" tabindex="0" aria-label="IEC詳細を開く">
       <div class="org-logo-placeholder iec">IEC</div>
       <div>
         <h3>IEC（国際電気標準会議） — International Electrotechnical Commission</h3>
@@ -102,10 +114,16 @@
           <div class="meta-chip"><span>規格数：</span>10,000件以上</div>
           <div class="meta-chip"><span>日本代表：</span>JISC</div>
         </div>
+        <div class="official-links" onclick="event.stopPropagation()">
+          <a class="official-link iec" href="https://www.iec.ch/" target="_blank" rel="noopener">🌐 IEC公式サイト</a>
+          <a class="official-link iec" href="https://webstore.iec.ch/" target="_blank" rel="noopener">📄 IEC規格購入</a>
+          <a class="official-link iec" href="https://www.iec.ch/tc-and-sc" target="_blank" rel="noopener">🔬 技術委員会一覧</a>
+        </div>
+        <button class="more-btn">分類・主要規格を見る ▶</button>
       </div>
     </div>
 
-    <div class="overview-box">
+    <div class="overview-box" data-org="ieee" role="button" tabindex="0" aria-label="IEEE詳細を開く">
       <div class="org-logo-placeholder ieee">IEEE</div>
       <div>
         <h3>IEEE（電気電子学会） — Institute of Electrical and Electronics Engineers</h3>
@@ -116,6 +134,12 @@
           <div class="meta-chip"><span>会員：</span>約40万人以上</div>
           <div class="meta-chip"><span>主な分野：</span>IT・通信・電気電子</div>
         </div>
+        <div class="official-links" onclick="event.stopPropagation()">
+          <a class="official-link ieee" href="https://www.ieee.org/" target="_blank" rel="noopener">🌐 IEEE公式サイト</a>
+          <a class="official-link ieee" href="https://standards.ieee.org/" target="_blank" rel="noopener">📄 IEEE Standards</a>
+          <a class="official-link ieee" href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">🔬 IEEE Xplore</a>
+        </div>
+        <button class="more-btn">分類・主要規格を見る ▶</button>
       </div>
     </div>
 
@@ -250,41 +274,49 @@
         <div class="card-tag jis">JIS Q 9001</div>
         <h3>品質マネジメントシステム</h3>
         <p>ISO 9001対応。製品・サービスの品質を継続的に改善するためのマネジメントシステム要求事項を定めた規格。製造業・サービス業を問わず世界中で認証取得が進む。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS Q 14001</div>
         <h3>環境マネジメントシステム</h3>
         <p>ISO 14001対応。組織が環境に与える影響を管理・改善するためのシステム要求事項。環境負荷低減・法令遵守を目的とし、事業者の環境方針策定を支援する。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS Q 27001</div>
         <h3>情報セキュリティマネジメントシステム</h3>
         <p>ISO/IEC 27001対応。情報資産を保護するためのISMS（Information Security Management System）の要求事項。機密性・完全性・可用性の維持を目的とする。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS X 0208</div>
         <h3>2バイト情報交換用符号化漢字集合</h3>
         <p>日本語の文字コード規格。6,879字の漢字とひらがな・カタカナ等を収録。Shift-JIS、EUC-JPなど主要なエンコーディングの基盤となった歴史的規格。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS B 0001</div>
         <h3>機械製図</h3>
         <p>機械・設備の図面作成に関するルールを定めた規格。線の種類・寸法記入法・投影法など、日本の製造現場で広く使われる図面標準。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS G 3101</div>
         <h3>一般構造用圧延鋼材</h3>
         <p>SS400などでおなじみの建築・橋梁・船舶などに使用される一般構造用鋼材の規格。引張強さ・化学成分・形状の要件を規定。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS L 0001</div>
         <h3>繊維製品の取扱い表示</h3>
         <p>衣類などに付くケアラベルの洗濯・乾燥・アイロン等の絵表示を定めた規格。ISO 3758と整合。身近な生活製品に深く関わる規格の一つ。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
       <div class="card">
         <div class="card-tag jis">JIS T 0601</div>
         <h3>医用電気機器の安全通則</h3>
         <p>IEC 60601対応。医用電気機器の電気的安全性に関する基本要求事項を定めた規格。医療機器の設計・承認において必須とされる重要規格。</p>
+        <a class="card-official jis" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList" target="_blank" rel="noopener">🔗 JISC で検索</a>
       </div>
     </div>
 
@@ -309,61 +341,73 @@
         <div class="card-tag iso">ISO 9001:2015</div>
         <h3>品質マネジメントシステム</h3>
         <p>顧客満足の向上と製品・サービスの品質を継続的に改善するための国際規格。世界170か国以上で100万件を超える認証が行われており、最も広く普及したマネジメント規格。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 14001:2015</div>
         <h3>環境マネジメントシステム</h3>
         <p>組織の環境への影響を体系的に管理し、持続可能な発展を支援するための規格。PDCA（計画・実施・点検・改善）サイクルに基づく環境管理の枠組みを提供。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/60857.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 45001:2018</div>
         <h3>労働安全衛生マネジメントシステム</h3>
         <p>労働者の安全と健康を守るためのマネジメントシステム規格。旧OHSAS 18001に代わる国際規格として2018年に発行。労働災害・疾病の防止を目的とする。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/63787.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO/IEC 27001:2022</div>
         <h3>情報セキュリティマネジメントシステム</h3>
         <p>情報資産のリスク管理を体系化し、機密性・完全性・可用性を保護するための規格。クラウドサービスやサイバーセキュリティ対策の基盤として世界的に普及。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/27001" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 50001:2018</div>
         <h3>エネルギーマネジメントシステム</h3>
         <p>組織のエネルギー消費を継続的に改善・管理するための規格。エネルギーコスト削減・CO₂排出削減・省エネ法への対応などで注目を集める。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/69426.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 22000:2018</div>
         <h3>食品安全マネジメントシステム</h3>
         <p>食品サプライチェーン全体での食品安全を確保するための規格。HACCPの概念を取り入れており、食品製造業・外食産業・小売業などが対象。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/65464.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 13485:2016</div>
         <h3>医療機器品質マネジメントシステム</h3>
         <p>医療機器の設計・製造・供給に関わる組織のための品質マネジメント規格。各国の医療機器規制（日本のQMS省令、EU MDRなど）と連携している。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/59752.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 26000:2010</div>
         <h3>社会的責任のガイダンス</h3>
         <p>組織の社会的責任（CSR）に関する国際ガイダンス規格。認証を目的とせず、SDGsやESG経営の指針として広く参照される。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/42546.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 31000:2018</div>
         <h3>リスクマネジメント</h3>
         <p>組織のリスク管理のための原則・枠組み・プロセスを定めた規格。業種・規模を問わず適用可能な汎用的ガイダンスで、企業のリスク戦略立案の基盤となる。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/65694.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 8601:2019</div>
         <h3>日付と時刻の表示形式</h3>
         <p>日付・時刻の国際統一表記法（YYYY-MM-DDなど）を定めた規格。情報システム・データ交換・国際文書で広く使われるフォーマットの標準。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/70907.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 4217:2015</div>
         <h3>通貨コード</h3>
         <p>世界各国の通貨を3文字の英字コード（JPY・USD・EURなど）と数字コードで表す規格。金融システム・外国為替・国際取引で必須。</p>
+        <a class="card-official iso" href="https://www.iso.org/standard/64758.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
       <div class="card">
         <div class="card-tag iso">ISO 3166:2020</div>
         <h3>国名コード</h3>
         <p>国・地域・言語を英字コード（JP・US・CNなど）で表す規格。URLの国別ドメイン・国際取引・行政文書など幅広い場面で参照される。</p>
+        <a class="card-official iso" href="https://www.iso.org/iso-3166-country-codes.html" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
     </div>
 
@@ -423,41 +467,49 @@
         <div class="card-tag iec">IEC 60364</div>
         <h3>低圧電気設備</h3>
         <p>建築物内の電気設備の設計・施工・検査に関する基本規格シリーズ。感電・火災などのリスク防止を目的とし、世界各国の電気設備基準の基盤となっている。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=60364" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">IEC 60601</div>
         <h3>医用電気機器の安全</h3>
         <p>医療機器の電気的安全性・EMC（電磁両立性）に関する基本規格。JIS T 0601として日本でも採用。医療機器の承認申請で参照必須の規格。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=60601" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">IEC 61010</div>
         <h3>測定・制御・試験機器の安全</h3>
         <p>計測器・試験機器・制御装置の安全に関する規格。電気安全・機械的安全・環境試験などを規定し、産業用機器設計の基準として広く使用される。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=61010" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">IEC 61508</div>
         <h3>電気・電子・プログラマブル電子安全関連系の機能安全</h3>
         <p>機能安全の基礎規格。SIL（安全完全性レベル）の概念を導入し、産業機器・自動車・医療など多分野の安全規格の基盤となっている。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=61508" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">IEC 62443</div>
         <h3>産業用オートメーション・制御システムのセキュリティ</h3>
         <p>工場・プラント等のOT（操作技術）環境のサイバーセキュリティに関する規格シリーズ。インフラのセキュリティ確保において世界標準となりつつある。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=62443" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">IEC 62368</div>
         <h3>音響・映像・IT機器の安全</h3>
         <p>AV機器・IT機器の安全規格。旧IEC 60065（AV機器）とIEC 60950（IT機器）を統合した規格で、電気安全・エネルギー源に基づくハザードベースアプローチを採用。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=62368" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">IEC 61000</div>
         <h3>電磁両立性（EMC）</h3>
         <p>電気機器が発生する電磁波・外部電磁界への耐性（イミュニティ）を定めた規格シリーズ。各種機器の設計・試験・認証の基準として世界規模で参照される。</p>
+        <a class="card-official iec" href="https://webstore.iec.ch/en/publication?q=61000" target="_blank" rel="noopener">🔗 IEC Webstore</a>
       </div>
       <div class="card">
         <div class="card-tag iec">ISO/IEC 27001</div>
         <h3>情報セキュリティマネジメントシステム</h3>
         <p>ISOとIECが共同で策定した情報セキュリティ管理の国際規格。JTC 1/SC 27が担当。情報セキュリティのリスク管理・組織体制を体系的に規定する。</p>
+        <a class="card-official iec" href="https://www.iso.org/standard/27001" target="_blank" rel="noopener">🔗 ISO公式ページ</a>
       </div>
     </div>
   </section>
@@ -478,41 +530,49 @@
         <div class="card-tag ieee">IEEE 802.11</div>
         <h3>無線LAN（Wi-Fi）</h3>
         <p>Wi-Fiの基本規格シリーズ。802.11a/b/g/n（Wi-Fi 4）/ac（Wi-Fi 5）/ax（Wi-Fi 6）/be（Wi-Fi 7）と進化し、現代の無線通信インフラを支える。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/ieee/802.11/7028/" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 802.3</div>
         <h3>Ethernet（有線LAN）</h3>
         <p>有線ネットワークの基本規格。10Mbpsから100Gbps（400Gbps以上）まで多数の速度規格があり、企業・家庭のネットワーク基盤を形成している。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/ieee/802.3/7071/" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 802.15</div>
         <h3>パーソナルエリアネットワーク（PAN）</h3>
         <p>Bluetooth（802.15.1）やZigBee（802.15.4）を含む近距離無線通信の規格群。IoTデバイス・センサーネットワーク・スマートホーム機器に広く使われる。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/search/?q=802.15" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 754</div>
         <h3>浮動小数点演算の標準</h3>
         <p>コンピュータでの浮動小数点数の表現・演算方法を定めた規格。C/C++・Javaなど多くのプログラミング言語の数値演算の基盤となる基礎的な規格。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/ieee/754/6210/" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 1284</div>
         <h3>パラレルポートインタフェース</h3>
         <p>プリンタ等の接続に使われたパラレルインタフェースの規格。現在はUSBに移行したが、産業用・レガシーシステムでは今も参照されることがある。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/search/?q=1284" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 1588</div>
         <h3>高精度時刻同期プロトコル（PTP）</h3>
         <p>ネットワーク上で高精度な時刻同期を実現するプロトコルの規格。通信・計測・制御システムのタイミング同期に使われ、5Gや産業ネットワークでも重要。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/ieee/1588/6825/" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 2030</div>
         <h3>スマートグリッドの相互運用性</h3>
         <p>電力系統とITシステムの相互運用性に関する規格。再生可能エネルギーの統合・電力需給管理・スマートメーターなどのスマートグリッド構築を支援する。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/search/?q=2030" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
       <div class="card">
         <div class="card-tag ieee">IEEE 7000</div>
         <h3>倫理的考慮を組み込んだシステム設計</h3>
         <p>AIや自動化システムの設計において倫理・人権・プライバシーを考慮するためのプロセス規格。AI倫理・責任ある技術開発の国際標準として注目される。</p>
+        <a class="card-official ieee" href="https://standards.ieee.org/ieee/7000/6781/" target="_blank" rel="noopener">🔗 IEEE Standards</a>
       </div>
     </div>
   </section>
@@ -1018,6 +1078,21 @@
 
 <!-- ページトップへ -->
 <button id="back-to-top" aria-label="ページトップへ">&#8679;</button>
+
+<!-- ===== 規格詳細モーダル ===== -->
+<div id="org-modal" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title-h2">
+  <div class="modal-dialog">
+    <button class="modal-close" id="modal-close" aria-label="閉じる">&times;</button>
+    <div class="modal-header">
+      <div class="modal-logo" id="modal-logo"></div>
+      <div class="modal-title">
+        <h2 id="modal-title-h2"></h2>
+        <p id="modal-title-sub"></p>
+      </div>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

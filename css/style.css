@@ -1030,3 +1030,202 @@ footer a:hover {
 .tip-box strong {
   color: var(--primary);
 }
+
+/* ===== overview-box クリック可能 ===== */
+.overview-box[data-org] {
+  cursor: pointer;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.overview-box[data-org]:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.overview-box .more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--primary);
+  transition: background var(--transition), color var(--transition);
+}
+.overview-box .more-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===== 公式HPリンク（概要ボックス内） ===== */
+.official-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.official-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid;
+  transition: background var(--transition), color var(--transition);
+}
+.official-link.jis  { color: var(--accent-jis);  border-color: var(--accent-jis);  }
+.official-link.jis:hover  { background: var(--accent-jis);  color: #fff; }
+.official-link.iso  { color: var(--accent-iso);  border-color: var(--accent-iso);  }
+.official-link.iso:hover  { background: var(--accent-iso);  color: #fff; }
+.official-link.iec  { color: var(--accent-iec);  border-color: var(--accent-iec);  }
+.official-link.iec:hover  { background: var(--accent-iec);  color: #fff; }
+.official-link.ieee { color: var(--accent-ieee); border-color: var(--accent-ieee); }
+.official-link.ieee:hover { background: var(--accent-ieee); color: #fff; }
+
+/* ===== カード内公式リンク ===== */
+.card-official {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1.5px solid;
+  transition: background var(--transition), color var(--transition);
+}
+.card-official.jis  { color: var(--accent-jis);  border-color: var(--accent-jis);  }
+.card-official.jis:hover  { background: var(--accent-jis);  color: #fff; }
+.card-official.iso  { color: var(--accent-iso);  border-color: var(--accent-iso);  }
+.card-official.iso:hover  { background: var(--accent-iso);  color: #fff; }
+.card-official.iec  { color: var(--accent-iec);  border-color: var(--accent-iec);  }
+.card-official.iec:hover  { background: var(--accent-iec);  color: #fff; }
+.card-official.ieee { color: var(--accent-ieee); border-color: var(--accent-ieee); }
+.card-official.ieee:hover { background: var(--accent-ieee); color: #fff; }
+
+/* ===== モーダル ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 30, 60, 0.55);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px 48px;
+  overflow-y: auto;
+  backdrop-filter: blur(3px);
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal-dialog {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 48px rgba(26,58,107,0.22);
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  animation: modalIn 0.22s ease;
+  margin: auto;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-logo {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 1.1rem; color: #fff; flex-shrink: 0;
+}
+.modal-logo.jis  { background: var(--accent-jis); }
+.modal-logo.iso  { background: var(--accent-iso); }
+.modal-logo.iec  { background: var(--accent-iec); }
+.modal-logo.ieee { background: var(--accent-ieee); }
+.modal-title { flex: 1; }
+.modal-title h2 { font-size: 1.15rem; color: var(--primary); margin-bottom: 2px; }
+.modal-title p  { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+.modal-close {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer;
+  color: var(--text-muted); line-height: 1;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+.modal-close:hover { background: var(--bg); color: var(--text); }
+
+.modal-body { padding: 20px 28px 32px; }
+
+.modal-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+.modal-section-title:first-child { margin-top: 0; }
+
+.modal-official-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.modal-table-wrapper { overflow-x: auto; }
+.modal-table-wrapper table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+.modal-table-wrapper th {
+  background: var(--bg);
+  color: var(--primary);
+  font-weight: 700;
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.modal-table-wrapper td {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+.modal-table-wrapper tr:nth-child(even) td { background: #f9fafd; }
+
+.modal-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+.modal-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.modal-card .card-tag { margin-bottom: 6px; font-size: 0.75rem; padding: 2px 8px; }
+.modal-card h4 { font-size: 0.88rem; color: var(--primary); margin-bottom: 5px; }
+.modal-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; flex: 1; }
+.modal-card .card-official { align-self: flex-start; }
