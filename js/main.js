@@ -150,47 +150,42 @@ if (backToTop) {
 // ===== ニュース RSS取得 =====
 const NEWS_FEEDS = [
   {
+    key: 'jis',
+    label: 'JIS',
+    url: 'https://news.google.com/rss/search?q=JIS+規格&hl=ja&gl=JP&ceid=JP:ja'
+  },
+  {
     key: 'iso',
     label: 'ISO',
-    url: 'https://www.iso.org/news/index.rss'
+    url: 'https://news.google.com/rss/search?q=ISO+規格+標準化&hl=ja&gl=JP&ceid=JP:ja'
   },
   {
     key: 'iec',
     label: 'IEC',
-    url: 'https://www.iec.ch/news-events/rss'
+    url: 'https://news.google.com/rss/search?q=IEC+規格+電気標準&hl=ja&gl=JP&ceid=JP:ja'
   },
   {
     key: 'ieee',
-    label: 'IEEE Spectrum',
-    url: 'https://spectrum.ieee.org/rss/fulltext'
+    label: 'IEEE',
+    url: 'https://news.google.com/rss/search?q=IEEE+規格+標準&hl=ja&gl=JP&ceid=JP:ja'
   }
 ];
 
-const PROXY = 'https://api.allorigins.win/get?url=';
+const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
 async function fetchFeed(feed) {
-  const res = await fetch(PROXY + encodeURIComponent(feed.url));
+  const res = await fetch(RSS2JSON + encodeURIComponent(feed.url));
   if (!res.ok) throw new Error('fetch failed');
   const data = await res.json();
-  const parser = new DOMParser();
-  const xml = parser.parseFromString(data.contents, 'text/xml');
-  const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
-  return items.map(item => {
-    const rawDesc = item.querySelector('description')?.textContent || '';
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = rawDesc;
-    const desc = tempDiv.textContent.trim().slice(0, 120);
-    const rawDate = item.querySelector('pubDate')?.textContent || '';
-    const date = rawDate ? new Date(rawDate).toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
-    return {
-      source: feed.key,
-      label: feed.label,
-      title: item.querySelector('title')?.textContent.trim() || '',
-      link: item.querySelector('link')?.textContent.trim() || '',
-      desc,
-      date
-    };
-  });
+  if (data.status !== 'ok') throw new Error('rss error');
+  return data.items.slice(0, 5).map(item => ({
+    source: feed.key,
+    label: feed.label,
+    title: item.title || '',
+    link: item.link || '',
+    desc: (item.description || '').replace(/<[^>]+>/g, '').trim().slice(0, 120),
+    date: item.pubDate ? new Date(item.pubDate).toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' }) : ''
+  }));
 }
 
 async function loadNews() {
