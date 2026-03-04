@@ -147,6 +147,106 @@ if (backToTop) {
   });
 }
 
+// ===== ニュース RSS取得 =====
+const NEWS_FEEDS = [
+  {
+    key: 'iso',
+    label: 'ISO',
+    url: 'https://www.iso.org/news/index.rss'
+  },
+  {
+    key: 'iec',
+    label: 'IEC',
+    url: 'https://www.iec.ch/news-events/rss'
+  },
+  {
+    key: 'ieee',
+    label: 'IEEE Spectrum',
+    url: 'https://spectrum.ieee.org/rss/fulltext'
+  }
+];
+
+const PROXY = 'https://api.allorigins.win/get?url=';
+
+async function fetchFeed(feed) {
+  const res = await fetch(PROXY + encodeURIComponent(feed.url));
+  if (!res.ok) throw new Error('fetch failed');
+  const data = await res.json();
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(data.contents, 'text/xml');
+  const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
+  return items.map(item => {
+    const rawDesc = item.querySelector('description')?.textContent || '';
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = rawDesc;
+    const desc = tempDiv.textContent.trim().slice(0, 120);
+    const rawDate = item.querySelector('pubDate')?.textContent || '';
+    const date = rawDate ? new Date(rawDate).toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+    return {
+      source: feed.key,
+      label: feed.label,
+      title: item.querySelector('title')?.textContent.trim() || '',
+      link: item.querySelector('link')?.textContent.trim() || '',
+      desc,
+      date
+    };
+  });
+}
+
+async function loadNews() {
+  const loading = document.getElementById('news-loading');
+  const error = document.getElementById('news-error');
+  const list = document.getElementById('news-list');
+  if (!list) return;
+
+  const results = await Promise.allSettled(NEWS_FEEDS.map(fetchFeed));
+  const allItems = results
+    .filter(r => r.status === 'fulfilled')
+    .flatMap(r => r.value);
+
+  if (loading) loading.classList.add('hidden');
+
+  if (allItems.length === 0) {
+    if (error) error.classList.remove('hidden');
+    return;
+  }
+
+  allItems.forEach(item => {
+    const a = document.createElement('a');
+    a.href = item.link;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.className = 'news-item';
+    a.dataset.newsType = item.source;
+    a.innerHTML = `
+      <div class="news-source-badge ${item.source}">${item.label}</div>
+      <div class="news-body">
+        <h4>${item.title}</h4>
+        ${item.desc ? `<p>${item.desc}…</p>` : ''}
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+        <span class="news-date">${item.date}</span>
+        <span class="news-arrow">→</span>
+      </div>
+    `;
+    list.appendChild(a);
+  });
+
+  // ニュースフィルター
+  document.querySelectorAll('[data-news-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-news-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.newsFilter;
+      document.querySelectorAll('.news-item').forEach(el => {
+        el.classList.toggle('hidden', f !== 'all' && el.dataset.newsType !== f);
+      });
+    });
+  });
+}
+
+loadNews();
+
 // ===== スムーススクロール（ナビ） =====
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
