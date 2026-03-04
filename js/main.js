@@ -510,8 +510,28 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
 });
 
+// ナビ・バッジの data-modal-org リンク
+document.querySelectorAll('[data-modal-org]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    openModal(el.dataset.modalOrg);
+  });
+});
+
+// ボタン直接クリック
+document.querySelectorAll('.more-btn[data-org]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    openModal(btn.dataset.org);
+  });
+});
+
+// ボックス全体クリック（ボタン・リンク以外）
 document.querySelectorAll('.overview-box[data-org]').forEach(box => {
-  box.addEventListener('click', () => openModal(box.dataset.org));
+  box.addEventListener('click', e => {
+    if (e.target.closest('.official-links') || e.target.closest('.more-btn')) return;
+    openModal(box.dataset.org);
+  });
   box.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -523,7 +543,9 @@ document.querySelectorAll('.overview-box[data-org]').forEach(box => {
 // ===== スムーススクロール（ナビ） =====
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    if (!href || href === '#' || link.dataset.modalOrg) return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -1031,6 +1031,11 @@ footer a:hover {
   color: var(--primary);
 }
 
+/* ===== JIS/ISO/IEC/IEEE 詳細セクション非表示（モーダルで表示） ===== */
+#jis, #iso, #iec, #ieee {
+  display: none;
+}
+
 /* ===== overview-box クリック可能 ===== */
 .overview-box[data-org] {
   cursor: pointer;
