@@ -270,6 +270,8 @@ const ORG_DATA = {
     name: 'JIS（日本産業規格）',
     nameEn: 'Japanese Industrial Standards',
     color: 'jis',
+    intro: 'JIS規格は産業標準化法に基づき、日本産業標準調査会（JISC）が策定・審議し、主務大臣が制定します。工業製品の品質・安全性・互換性の確保を目的とし、製造・建設・サービスなど幅広い分野をカバーしています。',
+    tipBox: 'JISマークは、JIS規格に適合した製品であることを示す任意の認証マーク。国が登録した機関（登録認証機関）によって認証された製品に付与できます。消費者・購買者が製品品質を確認する手がかりとなります。なお、JIS規格の約65%はISO/IEC規格と整合化（IDT・MOD・NEQ）されています。',
     officialLinks: [
       { label: '🌐 JISC公式サイト',  url: 'https://www.jisc.go.jp/' },
       { label: '📄 JIS規格票閲覧（JSA）', url: 'https://webdesk.jsa.or.jp/' },
@@ -311,6 +313,16 @@ const ORG_DATA = {
     name: 'ISO（国際標準化機構）',
     nameEn: 'International Organization for Standardization',
     color: 'iso',
+    intro: '電気・電子分野を除く工業・農業・サービス等の国際規格を策定する非政府国際機関。170か国以上が参加し、国際的な貿易・技術交流の円滑化に貢献しています。',
+    process: [
+      { step: 'STEP 1', title: '予備段階（PWI）',   desc: '予備作業項目として登録。ニーズ調査・提案準備。' },
+      { step: 'STEP 2', title: '提案段階（NP）',    desc: '新業務項目提案。各国が投票し、承認されると技術委員会（TC）で審議開始。' },
+      { step: 'STEP 3', title: '作成段階（WD）',    desc: '作業原案（Working Draft）を作成。TC内の作業グループ（WG）が担当。' },
+      { step: 'STEP 4', title: '委員会段階（CD）',  desc: '委員会原案（Committee Draft）として各国メンバーに配布・コメント収集。' },
+      { step: 'STEP 5', title: '照会段階（DIS）',   desc: '国際規格案（Draft International Standard）として広く意見を募集・投票。' },
+      { step: 'STEP 6', title: '承認段階（FDIS）',  desc: '最終国際規格案（Final DIS）として最終投票。承認で次ステップへ。' },
+      { step: 'STEP 7', title: '発行（IS）',        desc: '国際規格（International Standard）として正式発行。ISO事務局が管理。' },
+    ],
     officialLinks: [
       { label: '🌐 ISO公式サイト',   url: 'https://www.iso.org/' },
       { label: '📄 規格一覧',         url: 'https://www.iso.org/standards.html' },
@@ -348,6 +360,7 @@ const ORG_DATA = {
     name: 'IEC（国際電気標準会議）',
     nameEn: 'International Electrotechnical Commission',
     color: 'iec',
+    intro: '電気・電子・関連技術分野専門の国際規格機関です。ISOと協力してJTC 1（情報技術）などを共同運営しています。日本では日本電気技術規格委員会（JESC）が国内審議機関を担当しています。',
     officialLinks: [
       { label: '🌐 IEC公式サイト',    url: 'https://www.iec.ch/' },
       { label: '📄 IEC規格購入',       url: 'https://webstore.iec.ch/' },
@@ -383,6 +396,7 @@ const ORG_DATA = {
     name: 'IEEE（電気電子学会）',
     nameEn: 'Institute of Electrical and Electronics Engineers',
     color: 'ieee',
+    intro: '世界最大の電気電子技術系学術団体であり、情報通信分野を中心に多数の技術規格を策定しています。Wi-Fi（IEEE 802.11）やEthernet（IEEE 802.3）など情報通信インフラを支える規格を多数策定しています。',
     officialLinks: [
       { label: '🌐 IEEE公式サイト',   url: 'https://www.ieee.org/' },
       { label: '📄 IEEE Standards',   url: 'https://standards.ieee.org/' },
@@ -426,6 +440,14 @@ function buildModalContent(org) {
   // ボディ
   const body = document.getElementById('modal-body');
   body.innerHTML = '';
+
+  // 概要文
+  if (d.intro) {
+    const introEl = document.createElement('p');
+    introEl.style.cssText = 'color:var(--text-muted);font-size:0.9rem;margin-bottom:4px;line-height:1.7;';
+    introEl.textContent = d.intro;
+    body.appendChild(introEl);
+  }
 
   // 公式リンク
   const linksTitle = document.createElement('p');
@@ -481,6 +503,32 @@ function buildModalContent(org) {
     grid.appendChild(card);
   });
   body.appendChild(grid);
+
+  // 審議プロセス（ISOのみ）
+  if (d.process) {
+    const procTitle = document.createElement('p');
+    procTitle.className = 'modal-section-title';
+    procTitle.textContent = '規格の審議プロセス';
+    body.appendChild(procTitle);
+
+    const timeline = document.createElement('div');
+    timeline.className = 'modal-timeline';
+    timeline.innerHTML = d.process.map(p => `
+      <div class="modal-timeline-item">
+        <div class="modal-timeline-dot"></div>
+        <div class="modal-timeline-step">${p.step}</div>
+        <div class="modal-timeline-content"><strong>${p.title}</strong> ${p.desc}</div>
+      </div>`).join('');
+    body.appendChild(timeline);
+  }
+
+  // JISマーク等のTipBox
+  if (d.tipBox) {
+    const tip = document.createElement('div');
+    tip.className = 'modal-tip-box';
+    tip.innerHTML = d.tipBox;
+    body.appendChild(tip);
+  }
 }
 
 const modal = document.getElementById('org-modal');
