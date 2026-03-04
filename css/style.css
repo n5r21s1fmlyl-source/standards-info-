@@ -639,6 +639,65 @@ td:first-child {
   display: none;
 }
 
+/* ===== SNS ===== */
+.sns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.sns-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.sns-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  color: #fff;
+}
+
+.sns-card-head.iso { background: var(--accent-iso); }
+.sns-card-head.iec { background: var(--accent-iec); }
+.sns-card-head.ieee { background: var(--accent-ieee); }
+.sns-card-head.jis { background: var(--accent-jis); }
+
+.sns-org {
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.sns-handle {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  background: rgba(0,0,0,0.15);
+  padding: 3px 10px;
+  border-radius: 999px;
+  transition: background var(--transition);
+}
+
+.sns-handle:hover {
+  background: rgba(0,0,0,0.28);
+  color: #fff;
+}
+
+.sns-embed-wrap {
+  padding: 8px;
+  min-height: 200px;
+  background: #fff;
+}
+
+.sns-embed-wrap iframe {
+  border-radius: 8px;
+}
+
 /* ===== ページトップへ ===== */
 #back-to-top {
   position: fixed;

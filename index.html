@@ -28,6 +28,7 @@
       <a href="#compare">比較</a>
       <a href="#search">検索</a>
       <a href="#news">ニュース</a>
+      <a href="#sns">SNS</a>
     </nav>
     <button class="menu-toggle" id="menu-toggle" aria-label="メニュー">&#9776;</button>
   </div>
@@ -870,6 +871,87 @@
     <div id="news-list" class="news-list"></div>
   </section>
 
+
+  <!-- ===== SNSセクション ===== -->
+  <section class="section" id="sns">
+    <div class="section-header">
+      <div class="section-icon overview">📣</div>
+      <div>
+        <h2 class="section-title">公式SNSアカウント<small>OFFICIAL SOCIAL MEDIA</small></h2>
+      </div>
+    </div>
+
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">各規格機関の公式X（旧Twitter）タイムラインをまとめています。</p>
+
+    <div class="sns-grid">
+
+      <div class="sns-card">
+        <div class="sns-card-head iso">
+          <span class="sns-org">ISO</span>
+          <a href="https://x.com/isostandards" target="_blank" rel="noopener" class="sns-handle">@isostandards</a>
+        </div>
+        <div class="sns-embed-wrap">
+          <a class="twitter-timeline"
+             data-height="420"
+             data-chrome="noheader nofooter noborders transparent"
+             data-theme="light"
+             href="https://twitter.com/isostandards">
+            Tweets by @isostandards
+          </a>
+        </div>
+      </div>
+
+      <div class="sns-card">
+        <div class="sns-card-head iec">
+          <span class="sns-org">IEC</span>
+          <a href="https://x.com/IECstandards" target="_blank" rel="noopener" class="sns-handle">@IECstandards</a>
+        </div>
+        <div class="sns-embed-wrap">
+          <a class="twitter-timeline"
+             data-height="420"
+             data-chrome="noheader nofooter noborders transparent"
+             data-theme="light"
+             href="https://twitter.com/IECstandards">
+            Tweets by @IECstandards
+          </a>
+        </div>
+      </div>
+
+      <div class="sns-card">
+        <div class="sns-card-head ieee">
+          <span class="sns-org">IEEE</span>
+          <a href="https://x.com/IEEEorg" target="_blank" rel="noopener" class="sns-handle">@IEEEorg</a>
+        </div>
+        <div class="sns-embed-wrap">
+          <a class="twitter-timeline"
+             data-height="420"
+             data-chrome="noheader nofooter noborders transparent"
+             data-theme="light"
+             href="https://twitter.com/IEEEorg">
+            Tweets by @IEEEorg
+          </a>
+        </div>
+      </div>
+
+      <div class="sns-card">
+        <div class="sns-card-head jis">
+          <span class="sns-org">経済産業省</span>
+          <a href="https://x.com/meti_nippon" target="_blank" rel="noopener" class="sns-handle">@meti_nippon</a>
+        </div>
+        <div class="sns-embed-wrap">
+          <a class="twitter-timeline"
+             data-height="420"
+             data-chrome="noheader nofooter noborders transparent"
+             data-theme="light"
+             href="https://twitter.com/meti_nippon">
+            Tweets by @meti_nippon
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <!-- ===== フッター ===== -->
@@ -884,5 +966,6 @@
 <button id="back-to-top" aria-label="ページトップへ">&#8679;</button>
 
 <script src="js/main.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
