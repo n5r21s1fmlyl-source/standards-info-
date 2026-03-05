@@ -1372,6 +1372,45 @@ footer a:hover {
 .db-item-link.ieee { color: var(--accent-ieee); border-color: var(--accent-ieee); }
 .db-item-link.ieee:hover { background: var(--accent-ieee); color: #fff; }
 .db-empty { grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; }
+.db-item-overview-label,
+.modal-detail-item-overview-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+.db-item-toc {
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.db-item-toc summary {
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: #f7f9fc;
+  list-style: none;
+  user-select: none;
+}
+.db-item-toc summary::-webkit-details-marker { display: none; }
+.db-item-toc[open] summary {
+  color: var(--primary);
+  background: #eef2ff;
+  border-bottom: 1px solid var(--border);
+}
+.db-item-toc-list {
+  margin: 0;
+  padding: 8px 12px 8px 28px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  background: #fafbff;
+}
 
 @media (max-width: 600px) {
   .db-list { grid-template-columns: 1fr; }
