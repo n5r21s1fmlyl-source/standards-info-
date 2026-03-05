@@ -1259,6 +1259,15 @@ footer a:hover {
 .db-tab.active.iso-tab  { background: var(--accent-iso);  border-color: var(--accent-iso);  color: #fff; }
 .db-tab.active.iec-tab  { background: var(--accent-iec);  border-color: var(--accent-iec);  color: #fff; }
 .db-tab.active.ieee-tab { background: var(--accent-ieee); border-color: var(--accent-ieee); color: #fff; }
+.db-note {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  background: #f0f4ff;
+  border-left: 3px solid var(--primary-light);
+  padding: 9px 14px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 16px;
+}
 .db-search-row { margin-bottom: 12px; }
 .db-search-input {
   width: 100%;
