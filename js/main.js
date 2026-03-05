@@ -281,11 +281,12 @@ function initStandardsDB() {
   });
 
   function getSearchUrlDB(org, id) {
-    const q = encodeURIComponent(id);
+    const num = id.replace(/^(JIS|ISO|IEC|IEEE)\s*/i, '');
+    const q = encodeURIComponent(num);
     switch (org) {
-      case 'jis':  return 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList';
-      case 'iso':  return `https://www.iso.org/search.html#q=${q}`;
-      case 'iec':  return `https://webstore.iec.ch/en/search?q=${q}`;
+      case 'jis':  return `https://www.jisc.go.jp/`;
+      case 'iso':  return `https://www.iso.org/search.html#q=${encodeURIComponent(id)}`;
+      case 'iec':  return `https://www.iec.ch/`;
       case 'ieee': return `https://standards.ieee.org/search/?q=${q}`;
       default:     return '#';
     }
@@ -398,14 +399,14 @@ const ORG_DATA = {
       { code: 'JIS Z', field: 'その他（包装・物流等）', examples: 'JIS Z 0200（包装方法通則）、JIS Z 8301（規格票の様式）' },
     ],
     standards: [
-      { id: 'JIS Q 9001', name: '品質マネジメントシステム', desc: 'ISO 9001対応。製品・サービスの品質を継続的に改善するためのシステム要求事項。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS Q 14001', name: '環境マネジメントシステム', desc: 'ISO 14001対応。環境負荷低減・法令遵守を目的としたシステム要求事項。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS Q 27001', name: '情報セキュリティマネジメント', desc: 'ISO/IEC 27001対応。情報資産保護のためのISMS要求事項。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS X 0208', name: '2バイト情報交換用符号化漢字集合', desc: '日本語文字コード規格。Shift-JIS・EUC-JPの基盤となった歴史的規格。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS B 0001', name: '機械製図', desc: '図面作成の標準規格。線の種類・寸法記入法・投影法などを規定。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS G 3101', name: '一般構造用圧延鋼材（SS400等）', desc: 'SS400などの建築・橋梁用鋼材の規格。引張強さ・化学成分を規定。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS L 0001', name: '繊維製品の取扱い表示', desc: 'ケアラベルの洗濯・乾燥・アイロン等の絵表示を定めた規格。ISO 3758と整合。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
-      { id: 'JIS T 0601', name: '医用電気機器の安全通則', desc: 'IEC 60601対応。医療機器の電気的安全性に関する基本要求事項。', url: 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList', urlLabel: 'JISC で検索' },
+      { id: 'JIS Q 9001', name: '品質マネジメントシステム', desc: 'ISO 9001対応。製品・サービスの品質を継続的に改善するためのシステム要求事項。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS Q 14001', name: '環境マネジメントシステム', desc: 'ISO 14001対応。環境負荷低減・法令遵守を目的としたシステム要求事項。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS Q 27001', name: '情報セキュリティマネジメント', desc: 'ISO/IEC 27001対応。情報資産保護のためのISMS要求事項。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS X 0208', name: '2バイト情報交換用符号化漢字集合', desc: '日本語文字コード規格。Shift-JIS・EUC-JPの基盤となった歴史的規格。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS B 0001', name: '機械製図', desc: '図面作成の標準規格。線の種類・寸法記入法・投影法などを規定。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS G 3101', name: '一般構造用圧延鋼材（SS400等）', desc: 'SS400などの建築・橋梁用鋼材の規格。引張強さ・化学成分を規定。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS L 0001', name: '繊維製品の取扱い表示', desc: 'ケアラベルの洗濯・乾燥・アイロン等の絵表示を定めた規格。ISO 3758と整合。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
+      { id: 'JIS T 0601', name: '医用電気機器の安全通則', desc: 'IEC 60601対応。医療機器の電気的安全性に関する基本要求事項。', url: 'https://www.jisc.go.jp/', urlLabel: 'JISC で検索' },
     ],
   },
   iso: {
@@ -684,11 +685,12 @@ const STANDARDS_DB = {
 initStandardsDB();
 
 function getSearchUrl(org, id) {
-  const q = encodeURIComponent(id);
+  const num = id.replace(/^(JIS|ISO|IEC|IEEE)\s*/i, '');
+  const q = encodeURIComponent(num);
   switch (org) {
-    case 'jis':  return `https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList`;
-    case 'iso':  return `https://www.iso.org/search.html#q=${q}`;
-    case 'iec':  return `https://webstore.iec.ch/en/search?q=${q}`;
+    case 'jis':  return `https://www.jisc.go.jp/`;
+    case 'iso':  return `https://www.iso.org/search.html#q=${encodeURIComponent(id)}`;
+    case 'iec':  return `https://www.iec.ch/`;
     case 'ieee': return `https://standards.ieee.org/search/?q=${q}`;
     default:     return '#';
   }
