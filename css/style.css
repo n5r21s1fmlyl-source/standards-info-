@@ -1235,6 +1235,139 @@ footer a:hover {
 .modal-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; flex: 1; }
 .modal-card .card-official { align-self: flex-start; }
 
+/* ===== 規格番号データベース（メインページ） ===== */
+.db-tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.db-tab {
+  padding: 8px 22px;
+  border-radius: 24px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+.db-tab:hover { border-color: var(--primary-light); color: var(--primary); }
+.db-tab.active.jis-tab  { background: var(--accent-jis);  border-color: var(--accent-jis);  color: #fff; }
+.db-tab.active.iso-tab  { background: var(--accent-iso);  border-color: var(--accent-iso);  color: #fff; }
+.db-tab.active.iec-tab  { background: var(--accent-iec);  border-color: var(--accent-iec);  color: #fff; }
+.db-tab.active.ieee-tab { background: var(--accent-ieee); border-color: var(--accent-ieee); color: #fff; }
+.db-search-row { margin-bottom: 12px; }
+.db-search-input {
+  width: 100%;
+  padding: 11px 18px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  background: var(--surface);
+  outline: none;
+  transition: border-color var(--transition);
+  font-family: inherit;
+}
+.db-search-input:focus { border-color: var(--primary-light); }
+.db-cat-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.db-cat-btn {
+  padding: 4px 13px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+.db-cat-btn:hover,
+.db-cat-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.db-counter {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-bottom: 8px;
+}
+.db-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+.db-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.db-item:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.db-item-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.db-item-cat {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 1px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.db-item-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.4;
+}
+.db-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+.db-item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 2px 9px;
+  border-radius: 10px;
+  border: 1.5px solid;
+  align-self: flex-start;
+  margin-top: 4px;
+  transition: background var(--transition), color var(--transition);
+}
+.db-item-link.jis  { color: var(--accent-jis);  border-color: var(--accent-jis);  }
+.db-item-link.jis:hover  { background: var(--accent-jis);  color: #fff; }
+.db-item-link.iso  { color: var(--accent-iso);  border-color: var(--accent-iso);  }
+.db-item-link.iso:hover  { background: var(--accent-iso);  color: #fff; }
+.db-item-link.iec  { color: var(--accent-iec);  border-color: var(--accent-iec);  }
+.db-item-link.iec:hover  { background: var(--accent-iec);  color: #fff; }
+.db-item-link.ieee { color: var(--accent-ieee); border-color: var(--accent-ieee); }
+.db-item-link.ieee:hover { background: var(--accent-ieee); color: #fff; }
+.db-empty { grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+  .db-list { grid-template-columns: 1fr; }
+}
+
 /* ===== モーダル内 詳細規格検索 ===== */
 .modal-detail-search-wrap { margin-bottom: 10px; }
 .modal-detail-search {

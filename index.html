@@ -26,6 +26,7 @@
       <a href="#" data-modal-org="iec">IEC</a>
       <a href="#" data-modal-org="ieee">IEEE</a>
       <a href="#compare">比較</a>
+      <a href="#standards-db">規格DB</a>
       <a href="#search">検索</a>
       <a href="#news">ニュース</a>
       <a href="#sns">SNS</a>
@@ -689,6 +690,36 @@
         </tbody>
       </table>
     </div>
+  </section>
+
+  <!-- ===== 規格番号データベースセクション ===== -->
+  <section class="section" id="standards-db">
+    <div class="section-header">
+      <div class="section-icon overview">📋</div>
+      <div>
+        <h2 class="section-title">規格番号データベース<small>STANDARDS NUMBER DATABASE</small></h2>
+      </div>
+    </div>
+
+    <!-- 機関タブ -->
+    <div class="db-tab-row">
+      <button type="button" class="db-tab active" data-db-org="jis">🇯🇵 JIS</button>
+      <button type="button" class="db-tab" data-db-org="iso">🌍 ISO</button>
+      <button type="button" class="db-tab" data-db-org="iec">⚡ IEC</button>
+      <button type="button" class="db-tab" data-db-org="ieee">📡 IEEE</button>
+    </div>
+
+    <!-- 検索・フィルター -->
+    <div class="db-search-row">
+      <input type="text" id="db-search-input" class="db-search-input" placeholder="🔍 規格番号・名称・キーワードで検索...">
+    </div>
+    <div id="db-cat-filters" class="db-cat-filters"></div>
+
+    <!-- 件数 -->
+    <p id="db-counter" class="db-counter"></p>
+
+    <!-- 一覧 -->
+    <div id="db-list" class="db-list"></div>
   </section>
 
   <!-- ===== 検索セクション ===== -->

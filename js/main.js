@@ -262,6 +262,105 @@ async function loadNews() {
   });
 }
 
+// ===== 規格番号データベース（メインページ） =====
+(function initStandardsDB() {
+  const tabBtns   = document.querySelectorAll('.db-tab');
+  const searchEl  = document.getElementById('db-search-input');
+  const catWrap   = document.getElementById('db-cat-filters');
+  const counterEl = document.getElementById('db-counter');
+  const listEl    = document.getElementById('db-list');
+  if (!listEl) return;
+
+  const orgColors = { jis:'jis', iso:'iso', iec:'iec', ieee:'ieee' };
+  let currentOrg  = 'jis';
+  let currentCat  = 'すべて';
+
+  // タブに色クラスを追加
+  tabBtns.forEach(btn => {
+    btn.classList.add(btn.dataset.dbOrg + '-tab');
+  });
+
+  function getSearchUrlDB(org, id) {
+    const q = encodeURIComponent(id);
+    switch (org) {
+      case 'jis':  return 'https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList';
+      case 'iso':  return `https://www.iso.org/search.html#q=${q}`;
+      case 'iec':  return `https://webstore.iec.ch/en/search?q=${q}`;
+      case 'ieee': return `https://standards.ieee.org/search/?q=${q}`;
+      default:     return '#';
+    }
+  }
+
+  function buildCatFilters(org) {
+    const db = STANDARDS_DB[org] || [];
+    const cats = ['すべて', ...new Set(db.map(s => s.cat))];
+    catWrap.innerHTML = '';
+    cats.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'db-cat-btn' + (cat === 'すべて' ? ' active' : '');
+      btn.textContent = cat;
+      btn.dataset.cat = cat;
+      btn.addEventListener('click', () => {
+        catWrap.querySelectorAll('.db-cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCat = cat;
+        renderList();
+      });
+      catWrap.appendChild(btn);
+    });
+  }
+
+  function renderList() {
+    const db = STANDARDS_DB[currentOrg] || [];
+    const q  = searchEl ? searchEl.value.trim().toLowerCase() : '';
+    const filtered = db.filter(s => {
+      const matchCat = currentCat === 'すべて' || s.cat === currentCat;
+      const matchQ   = !q || s.id.toLowerCase().includes(q) || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.cat.toLowerCase().includes(q);
+      return matchCat && matchQ;
+    });
+
+    counterEl.textContent = `${filtered.length} 件 / 全 ${db.length} 件`;
+
+    if (filtered.length === 0) {
+      listEl.innerHTML = '<p class="db-empty">該当する規格が見つかりませんでした。</p>';
+      return;
+    }
+
+    const org = currentOrg;
+    listEl.innerHTML = filtered.map(s => `
+      <div class="db-item">
+        <div class="db-item-head">
+          <span class="card-tag ${org}" style="margin:0;font-size:0.72rem;padding:2px 8px;">${s.id}</span>
+          <span class="db-item-cat">${s.cat}</span>
+        </div>
+        <div class="db-item-name">${s.name}</div>
+        <div class="db-item-desc">${s.desc}</div>
+        <a class="db-item-link ${org}" href="${getSearchUrlDB(org, s.id)}" target="_blank" rel="noopener noreferrer">🔗 公式サイトで確認</a>
+      </div>`).join('');
+  }
+
+  function switchOrg(org) {
+    currentOrg = org;
+    currentCat = 'すべて';
+    if (searchEl) searchEl.value = '';
+    tabBtns.forEach(b => b.classList.toggle('active', b.dataset.dbOrg === org));
+    buildCatFilters(org);
+    renderList();
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => switchOrg(btn.dataset.dbOrg));
+  });
+
+  if (searchEl) {
+    searchEl.addEventListener('input', renderList);
+  }
+
+  // 初期表示
+  switchOrg('jis');
+})();
+
 loadNews();
 
 // ===== 規格詳細モーダル =====
