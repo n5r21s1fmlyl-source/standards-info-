@@ -263,7 +263,7 @@ async function loadNews() {
 }
 
 // ===== 規格番号データベース（メインページ） =====
-(function initStandardsDB() {
+function initStandardsDB() {
   const tabBtns   = document.querySelectorAll('.db-tab');
   const searchEl  = document.getElementById('db-search-input');
   const catWrap   = document.getElementById('db-cat-filters');
@@ -359,7 +359,7 @@ async function loadNews() {
 
   // 初期表示
   switchOrg('jis');
-})();
+}
 
 loadNews();
 
@@ -679,6 +679,9 @@ const STANDARDS_DB = {
     { id:'IEEE 30141',    cat:'IoT',          name:'IoTリファレンスアーキテクチャ',                desc:'IoTシステムの標準的なアーキテクチャ・用語・概念フレームワークを規定。' },
   ],
 };
+
+// STANDARDS_DB 定義後に初期化
+initStandardsDB();
 
 function getSearchUrl(org, id) {
   const q = encodeURIComponent(id);
