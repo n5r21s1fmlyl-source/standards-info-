@@ -1558,21 +1558,26 @@ footer a:hover {
 }
 .modal-timeline-content strong { color: var(--primary); margin-right: 4px; }
 
-/* ===== 産業別セクション（ウィンチ・ホイスト / 搬送・マテハン） ===== */
+/* ===== 産業別セクション（ウィンチ・ホイスト / 搬送・マテハン / 加工） ===== */
 :root {
   --accent-winch:   #c0611a;
   --accent-matehan: #0097a7;
+  --accent-kakou:   #455a64;
 }
 .section-icon.winch   { background: #fef0e6; color: var(--accent-winch); }
 .section-icon.matehan { background: #e0f7fa; color: var(--accent-matehan); }
+.section-icon.kakou   { background: #eceff1; color: var(--accent-kakou); }
 
 .card-tag.winch   { background: #fef0e6; color: var(--accent-winch); }
 .card-tag.matehan { background: #e0f7fa; color: var(--accent-matehan); }
+.card-tag.kakou   { background: #eceff1; color: var(--accent-kakou); }
 
-.card-official.winch       { color: var(--accent-winch);   border-color: var(--accent-winch); }
-.card-official.winch:hover { background: var(--accent-winch);   color: #fff; }
+.card-official.winch         { color: var(--accent-winch);   border-color: var(--accent-winch); }
+.card-official.winch:hover   { background: var(--accent-winch);   color: #fff; }
 .card-official.matehan       { color: var(--accent-matehan); border-color: var(--accent-matehan); }
 .card-official.matehan:hover { background: var(--accent-matehan); color: #fff; }
+.card-official.kakou         { color: var(--accent-kakou);   border-color: var(--accent-kakou); }
+.card-official.kakou:hover   { background: var(--accent-kakou);   color: #fff; }
 
 .industry-intro {
   background: var(--surface);
@@ -1597,6 +1602,7 @@ footer a:hover {
 .std-table-wrapper thead { background: linear-gradient(135deg, #4a4a4a 0%, #666 100%); color: #fff; }
 .std-table-wrapper.winch thead   { background: linear-gradient(135deg, var(--accent-winch) 0%, #e07b30 100%); }
 .std-table-wrapper.matehan thead { background: linear-gradient(135deg, var(--accent-matehan) 0%, #00bcd4 100%); }
+.std-table-wrapper.kakou thead   { background: linear-gradient(135deg, var(--accent-kakou) 0%, #78909c 100%); }
 
 /* モーダル内 tipBox */
 .modal-tip-box {
