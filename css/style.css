@@ -1733,6 +1733,20 @@ footer a:hover {
   flex-shrink: 0;
   white-space: nowrap;
 }
+a.guide-org-badge {
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+}
+a.guide-org-badge::after {
+  content: ' ↗';
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+a.guide-org-badge:hover {
+  background: var(--accent-jisguide);
+  color: #fff;
+}
 
 /* 熱処理セクション専用 */
 .netsushori-process-grid {
