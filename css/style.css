@@ -143,7 +143,6 @@ nav a:hover, nav a.active {
   opacity: 0.75;
   transition: transform var(--transition);
 }
-.nav-group:hover .nav-group-trigger,
 .nav-group.open .nav-group-trigger {
   background: rgba(255,255,255,0.18);
   color: #fff;
@@ -166,7 +165,6 @@ nav a:hover, nav a.active {
   padding: 6px;
   z-index: 200;
 }
-.nav-group:hover .nav-dropdown,
 .nav-group.open .nav-dropdown {
   display: block;
 }
@@ -951,7 +949,6 @@ footer a:hover {
     justify-content: space-between;
     padding: 9px 12px;
   }
-  .nav-group:hover .nav-dropdown { display: none; } /* hover無効化 */
   .nav-group.open .nav-dropdown {
     display: block;
     position: static;
