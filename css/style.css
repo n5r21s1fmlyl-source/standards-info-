@@ -1558,6 +1558,46 @@ footer a:hover {
 }
 .modal-timeline-content strong { color: var(--primary); margin-right: 4px; }
 
+/* ===== 産業別セクション（ウィンチ・ホイスト / 搬送・マテハン） ===== */
+:root {
+  --accent-winch:   #c0611a;
+  --accent-matehan: #0097a7;
+}
+.section-icon.winch   { background: #fef0e6; color: var(--accent-winch); }
+.section-icon.matehan { background: #e0f7fa; color: var(--accent-matehan); }
+
+.card-tag.winch   { background: #fef0e6; color: var(--accent-winch); }
+.card-tag.matehan { background: #e0f7fa; color: var(--accent-matehan); }
+
+.card-official.winch       { color: var(--accent-winch);   border-color: var(--accent-winch); }
+.card-official.winch:hover { background: var(--accent-winch);   color: #fff; }
+.card-official.matehan       { color: var(--accent-matehan); border-color: var(--accent-matehan); }
+.card-official.matehan:hover { background: var(--accent-matehan); color: #fff; }
+
+.industry-intro {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+.industry-intro strong { color: var(--text); }
+
+.std-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+.std-table-wrapper table { width: 100%; border-collapse: collapse; background: var(--surface); }
+.std-table-wrapper thead { background: linear-gradient(135deg, #4a4a4a 0%, #666 100%); color: #fff; }
+.std-table-wrapper.winch thead   { background: linear-gradient(135deg, var(--accent-winch) 0%, #e07b30 100%); }
+.std-table-wrapper.matehan thead { background: linear-gradient(135deg, var(--accent-matehan) 0%, #00bcd4 100%); }
+
 /* モーダル内 tipBox */
 .modal-tip-box {
   background: #eef4ff;
