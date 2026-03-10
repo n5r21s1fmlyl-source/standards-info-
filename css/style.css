@@ -1558,19 +1558,25 @@ footer a:hover {
 }
 .modal-timeline-content strong { color: var(--primary); margin-right: 4px; }
 
-/* ===== 産業別セクション（ウィンチ・ホイスト / 搬送・マテハン / 加工） ===== */
+/* ===== 産業別セクション（ウィンチ・ホイスト / 搬送・マテハン / 加工 / 団体規格） ===== */
 :root {
   --accent-winch:   #c0611a;
   --accent-matehan: #0097a7;
   --accent-kakou:   #455a64;
+  --accent-dantai:  #5c3d8f;
 }
 .section-icon.winch   { background: #fef0e6; color: var(--accent-winch); }
 .section-icon.matehan { background: #e0f7fa; color: var(--accent-matehan); }
 .section-icon.kakou   { background: #eceff1; color: var(--accent-kakou); }
+.section-icon.dantai  { background: #f3eeff; color: var(--accent-dantai); }
 
 .card-tag.winch   { background: #fef0e6; color: var(--accent-winch); }
 .card-tag.matehan { background: #e0f7fa; color: var(--accent-matehan); }
 .card-tag.kakou   { background: #eceff1; color: var(--accent-kakou); }
+.card-tag.dantai  { background: #f3eeff; color: var(--accent-dantai); }
+.card-tag.dantai-dom  { background: #ede7f6; color: #4527a0; }
+.card-tag.dantai-ovs  { background: #e8eaf6; color: #283593; }
+.card-tag.dantai-sha  { background: #fce4ec; color: #880e4f; }
 
 .card-official.winch         { color: var(--accent-winch);   border-color: var(--accent-winch); }
 .card-official.winch:hover   { background: var(--accent-winch);   color: #fff; }
@@ -1578,6 +1584,45 @@ footer a:hover {
 .card-official.matehan:hover { background: var(--accent-matehan); color: #fff; }
 .card-official.kakou         { color: var(--accent-kakou);   border-color: var(--accent-kakou); }
 .card-official.kakou:hover   { background: var(--accent-kakou);   color: #fff; }
+.card-official.dantai        { color: var(--accent-dantai);  border-color: var(--accent-dantai); }
+.card-official.dantai:hover  { background: var(--accent-dantai);  color: #fff; }
+
+/* 団体規格セクション専用 — タイプ別ラベル */
+.dantai-type-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+.dantai-type-badge.dom  { background: #ede7f6; color: #4527a0; }
+.dantai-type-badge.ovs  { background: #e8eaf6; color: #283593; }
+.dantai-type-badge.sha  { background: #fce4ec; color: #880e4f; }
+
+/* 団体規格 — サブ見出し */
+.dantai-subheading {
+  font-size: 1.0rem;
+  font-weight: 700;
+  color: var(--accent-dantai);
+  border-left: 4px solid var(--accent-dantai);
+  padding-left: 12px;
+  margin: 32px 0 16px;
+}
+
+/* 社内規格 tip box */
+.sha-tip-box {
+  background: #fdf6ff;
+  border-left: 4px solid var(--accent-dantai);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 18px;
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.sha-tip-box strong { color: var(--accent-dantai); }
 
 .industry-intro {
   background: var(--surface);
@@ -1603,6 +1648,7 @@ footer a:hover {
 .std-table-wrapper.winch thead   { background: linear-gradient(135deg, var(--accent-winch) 0%, #e07b30 100%); }
 .std-table-wrapper.matehan thead { background: linear-gradient(135deg, var(--accent-matehan) 0%, #00bcd4 100%); }
 .std-table-wrapper.kakou thead   { background: linear-gradient(135deg, var(--accent-kakou) 0%, #78909c 100%); }
+.std-table-wrapper.dantai thead  { background: linear-gradient(135deg, var(--accent-dantai) 0%, #7b52b9 100%); }
 
 /* モーダル内 tipBox */
 .modal-tip-box {
