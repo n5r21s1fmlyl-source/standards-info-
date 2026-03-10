@@ -21,18 +21,42 @@
     </a>
     <nav id="main-nav">
       <a href="#overview">概要</a>
-      <a href="#" data-modal-org="jis">JIS</a>
-      <a href="#" data-modal-org="iso">ISO</a>
-      <a href="#" data-modal-org="iec">IEC</a>
-      <a href="#" data-modal-org="ieee">IEEE</a>
-      <a href="#compare">比較</a>
-      <a href="#winch-hoist">ウィンチ・ホイスト</a>
-      <a href="#matehan">搬送・マテハン</a>
-      <a href="#kakou">加工・溶接・寸法</a>
-      <a href="#dantai">団体・社内規格</a>
-      <a href="#jis-guide">JIS解説ガイド</a>
-      <a href="#netsushori">熱処理</a>
-      <a href="#oil">シール・潤滑油</a>
+
+      <!-- 規格機関グループ -->
+      <div class="nav-group" id="nav-group-org">
+        <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="nav-dd-org">規格機関</button>
+        <div class="nav-dropdown" id="nav-dd-org">
+          <a href="#" data-modal-org="jis">JIS — 日本産業規格</a>
+          <a href="#" data-modal-org="iso">ISO — 国際標準化機構</a>
+          <a href="#" data-modal-org="iec">IEC — 国際電気標準会議</a>
+          <a href="#" data-modal-org="ieee">IEEE — 電気電子学会</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#compare">規格機関 比較表</a>
+        </div>
+      </div>
+
+      <!-- 産業別規格グループ -->
+      <div class="nav-group" id="nav-group-industry">
+        <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="nav-dd-industry">産業別規格</button>
+        <div class="nav-dropdown" id="nav-dd-industry">
+          <a href="#winch-hoist">🏗 ウィンチ・ホイスト</a>
+          <a href="#matehan">🚜 搬送・マテハン</a>
+          <a href="#kakou">🔧 加工・溶接・寸法</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#dantai">🏢 団体・社内規格</a>
+          <a href="#netsushori">🔥 熱処理</a>
+          <a href="#oil">🛢 シール・潤滑油</a>
+        </div>
+      </div>
+
+      <!-- 解説・ガイドグループ -->
+      <div class="nav-group" id="nav-group-guide">
+        <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="nav-dd-guide">解説・ガイド</button>
+        <div class="nav-dropdown" id="nav-dd-guide">
+          <a href="#jis-guide">📖 JIS解説・企業別ガイド</a>
+        </div>
+      </div>
+
       <a href="#standards-db">規格DB</a>
       <a href="#news">ニュース</a>
       <a href="#sns">SNS</a>
@@ -1302,7 +1326,7 @@
           主要区分：<strong>M（機械）/ E（電気）/ T（試験）/ F（燃料）</strong>
         </p>
         <div class="card-footer">
-          <a class="card-official dantai" href="https://www.jsae.or.jp/std/index.html" target="_blank" rel="noopener">🌐 JSAE規格</a>
+          <a class="card-official dantai" href="https://www.jsae.or.jp/assoc/std/tc22/" target="_blank" rel="noopener">🌐 JSAE規格</a>
         </div>
       </div>
 
@@ -2230,7 +2254,7 @@
           API/ILSACの汎用分類では二輪専用要件をカバーできないため設けられた。
         </p>
         <div class="card-footer">
-          <a class="card-official oil" href="https://www.jsae.or.jp/std/index.html" target="_blank" rel="noopener">🌐 JSAE</a>
+          <a class="card-official oil" href="https://www.jsae.or.jp/assoc/std/tc22/" target="_blank" rel="noopener">🌐 JSAE</a>
         </div>
       </div>
 

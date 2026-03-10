@@ -10,9 +10,45 @@ if (menuToggle && nav) {
   document.addEventListener('click', (e) => {
     if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
       nav.classList.remove('open');
+      // モバイルメニューを閉じたらドロップダウンも閉じる
+      document.querySelectorAll('.nav-group.open').forEach(g => g.classList.remove('open'));
     }
   });
 }
+
+// ===== ドロップダウングループ制御 =====
+document.querySelectorAll('.nav-group-trigger').forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const group = trigger.closest('.nav-group');
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      // モバイル：クリックでトグル（他を閉じる）
+      const wasOpen = group.classList.contains('open');
+      document.querySelectorAll('.nav-group.open').forEach(g => {
+        g.classList.remove('open');
+        g.querySelector('.nav-group-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        group.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    }
+    // デスクトップはCSSのhoverで制御
+  });
+});
+
+// ドロップダウン内のリンクをクリックしたらモバイルメニューを閉じる
+document.querySelectorAll('.nav-dropdown a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (nav) nav.classList.remove('open');
+    document.querySelectorAll('.nav-group.open').forEach(g => {
+      g.classList.remove('open');
+      g.querySelector('.nav-group-trigger').setAttribute('aria-expanded', 'false');
+    });
+  });
+});
 
 // アクティブナビゲーション
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
