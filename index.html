@@ -30,6 +30,9 @@
       <a href="#matehan">搬送・マテハン</a>
       <a href="#kakou">加工・溶接・寸法</a>
       <a href="#dantai">団体・社内規格</a>
+      <a href="#jis-guide">JIS解説ガイド</a>
+      <a href="#netsushori">熱処理</a>
+      <a href="#oil">シール・潤滑油</a>
       <a href="#standards-db">規格DB</a>
       <a href="#news">ニュース</a>
       <a href="#sns">SNS</a>
@@ -1659,6 +1662,664 @@
       必ず発注者から規格文書を入手し、内容を確認した上で製造・調達計画を立てることが重要です。
     </div>
 
+  </section>
+
+
+  <!-- ===== #25 JIS解説・適用ガイドライン ===== -->
+  <section class="section" id="jis-guide">
+    <div class="section-header">
+      <div class="section-icon jisguide">📖</div>
+      <div>
+        <h2 class="section-title">JIS解説・企業別適用ガイド<small>JIS COMMENTARY &amp; COMPANY APPLICATION GUIDES</small></h2>
+      </div>
+    </div>
+
+    <div class="industry-intro">
+      JIS規格票そのものは<strong>JISC（日本産業標準調査会）</strong>や<strong>JSA（日本規格協会）</strong>で閲覧できますが、
+      規格の<strong>「使い方・解釈・実務への適用方法」</strong>については、
+      業界団体・メーカー・研究機関が独自に<strong>解説書・技術資料・適用ガイド</strong>を公開しています。<br>
+      以下では主要なJIS規格ごとに、各組織が公開する参考資料を紐づけて紹介します。
+    </div>
+
+    <!-- JIS閲覧の公的窓口 -->
+    <p class="dantai-subheading">🏛 まず確認：JIS規格票の公的閲覧窓口</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-header"><span class="card-tag jisguide">公的窓口</span></div>
+        <h3 class="card-title">JISC — JIS規格票（無料閲覧）</h3>
+        <p class="card-desc">経済産業省・日本産業標準調査会（JISC）が提供する無料閲覧サービス。JIS全規格を PDF で閲覧可能（印刷・ダウンロード不可）。</p>
+        <div class="card-footer">
+          <a class="card-official jisguide" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList" target="_blank" rel="noopener">🌐 JIS検索（JISC）</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-tag jisguide">公的窓口</span></div>
+        <h3 class="card-title">JSA — JIS規格票（購入・PDF販売）</h3>
+        <p class="card-desc">日本規格協会（JSA）が販売する正式規格票および<strong>JIS解説書</strong>。解説書は規格の背景・用語・適用方法を詳しく説明した公式参考文書。</p>
+        <div class="card-footer">
+          <a class="card-official jisguide" href="https://webdesk.jsa.or.jp/" target="_blank" rel="noopener">🌐 JSA Webdesk</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-tag jisguide">公的窓口</span></div>
+        <h3 class="card-title">J-Global — 規格・論文横断検索</h3>
+        <p class="card-desc">JST（科学技術振興機構）が提供する国内外の規格・特許・文献横断検索サービス。JIS・ISO規格の概要を無料で確認できる。</p>
+        <div class="card-footer">
+          <a class="card-official jisguide" href="https://jglobal.jst.go.jp/" target="_blank" rel="noopener">🌐 J-Global</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 製図・公差 -->
+    <p class="dantai-subheading">✏️ 製図・公差・幾何特性（GPS）</p>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS B 0001</span>
+        <span class="jis-title">機械製図</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">JSA</span>JIS B 0001 解説書（JSA発行）— 投影法・線種・寸法記入の詳細解釈と適用例</li>
+          <li><span class="guide-org-badge">JSME</span>日本機械学会「機械工学便覧」— 設計製図の実務的な適用方法を解説</li>
+          <li><span class="guide-org-badge">大学・教育</span>各大学工学部の製図テキスト（東大・東工大等）— JIS B 0001に準拠した実習用解説資料（機関公開分あり）</li>
+          <li><span class="guide-org-badge">メーカー</span>ミスミ「FA・金型部品 技術情報」— JIS規格に基づく部品設計・製図の実務ガイド（Web無料）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS B 0401 / ISO 286</span>
+        <span class="jis-title">寸法公差・はめあい</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">JSA</span>JIS B 0401 解説書 — 基本偏差・IT等級・はめあい選択の解釈と選定指針</li>
+          <li><span class="guide-org-badge">メーカー</span>ミスミ「公差・はめあい選定ガイド」— 軸・穴のはめあい推奨値を実務向けに解説（Web無料）</li>
+          <li><span class="guide-org-badge">メーカー</span>NSK・NTN・JTEKT 軸受カタログ — 内輪・外輪のはめあい推奨表（JIS B 0401 準拠）</li>
+          <li><span class="guide-org-badge">精機学会</span>日本精密工学会 — 精密加工における公差適用の学会誌解説記事（会員向け）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS B 0021 / ISO 1101</span>
+        <span class="jis-title">幾何公差（GD&amp;T）</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">JSA</span>JIS B 0021 解説書 — 各幾何特性記号の定義・適用範囲・解釈の詳細説明</li>
+          <li><span class="guide-org-badge">メーカー</span>キーエンス「幾何公差入門ガイド」— 測定機メーカーの立場から実測方法とJIS解釈を無料公開</li>
+          <li><span class="guide-org-badge">メーカー</span>ミツトヨ「測定の基礎知識」— JIS B 0021・GPS体系に基づく測定実務解説</li>
+          <li><span class="guide-org-badge">学会</span>精密工学会 GPS標準化委員会 — ISO/GPS体系の国内普及・解説活動（セミナー資料一部公開）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 溶接 -->
+    <p class="dantai-subheading">🔥 溶接関連</p>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS Z 3001 / JIS Z 3040</span>
+        <span class="jis-title">溶接用語 / 溶接施工法の確認試験</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">JWES</span>日本溶接協会（JWES）— WES規格解説書・溶接施工法認定（WPS/PQR）のガイドライン（会員・購入）</li>
+          <li><span class="guide-org-badge">メーカー</span>神戸製鋼・日鉄溶接工業 — 溶接材料カタログに JIS Z 3212/3221 等の適用解説を掲載（Web無料）</li>
+          <li><span class="guide-org-badge">メーカー</span>パナソニック コネクト「溶接塾」— JIS溶接記号・施工管理の実務的な解説コンテンツ（Web無料）</li>
+          <li><span class="guide-org-badge">建設業</span>日本建築学会 JASS 6 解説書 — 鉄骨工事における JIS Z 3000系溶接規格の適用方法</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 材料・鋼材 -->
+    <p class="dantai-subheading">🔩 材料・鋼材</p>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS G 3101 / G 4051 / G 4053</span>
+        <span class="jis-title">一般構造用鋼 / 機械構造用炭素鋼・合金鋼</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">メーカー</span>日本製鉄・JFEスチール — 鋼材カタログに各JIS G規格の化学成分・機械的性質・熱処理条件を詳細掲載（Web無料）</li>
+          <li><span class="guide-org-badge">メーカー</span>山陽特殊製鋼・大同特殊鋼 — 特殊鋼JIS規格の成分・特性比較表・鋼種選定ガイド（Web無料）</li>
+          <li><span class="guide-org-badge">商社</span>ミスミ・モノタロウ — JIS鋼材グレード対応表、材料証明書（ミルシート）の見方解説</li>
+          <li><span class="guide-org-badge">NIMS</span>物質・材料研究機構（NIMS）— 材料データベース（MatNavi）にJIS鋼種の特性データを公開</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 機械要素 -->
+    <p class="dantai-subheading">⚙️ 機械要素（ネジ・軸受・歯車）</p>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS B 0205 / B 0209</span>
+        <span class="jis-title">メートルねじ / 一般用メートルねじ公差</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">メーカー</span>ミスミ「ねじ規格・締結設計ガイド」— JIS B 0205/0209に基づく公差クラス・選定方法を詳解（Web無料）</li>
+          <li><span class="guide-org-badge">メーカー</span>トキ「ボルト・ナット技術資料」— JIS B 1180/1181の強度区分・材料規格の解説</li>
+          <li><span class="guide-org-badge">JFST</span>日本ファスナー標準化団体 — ねじ規格の基礎から応用まで解説資料を公開</li>
+        </ul>
+      </div>
+    </div>
+    <div class="jisguide-card">
+      <div class="jisguide-card-head">
+        <span class="jis-num">JIS B 1512 / ISO 355</span>
+        <span class="jis-title">転がり軸受（寸法・公差・定格）</span>
+      </div>
+      <div class="jisguide-card-body">
+        <ul class="guide-list">
+          <li><span class="guide-org-badge">メーカー</span>NSK「軸受カタログ / 技術情報」— JIS B 1512・ISO 281（寿命計算）の実務適用方法、はめあい表を詳細解説（Web無料）</li>
+          <li><span class="guide-org-badge">メーカー</span>NTN「軸受技術資料 CAT.2300」— JIS規格との対比・荷重計算・選定ガイドを掲載</li>
+          <li><span class="guide-org-badge">メーカー</span>JTEKT（KOYO）「軸受設計ガイド」— 公差・はめあい・取付け方法のJIS準拠解説</li>
+          <li><span class="guide-org-badge">メーカー</span>THK「LMガイド技術資料」— JIS B 1192（リニアガイド）の選定・適用方法</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JIS解説ガイド一覧表 -->
+    <p class="dantai-subheading" style="margin-top:32px;">📋 分野別 — JIS解説・適用ガイド 主要参照先一覧</p>
+    <div class="std-table-wrapper jisguide">
+      <table>
+        <thead>
+          <tr><th>JIS番号</th><th>規格名</th><th>主な解説・ガイド発行元</th><th>資料の種類</th><th>入手方法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>JIS B 0001</td><td>機械製図</td><td>JSA・JSME・ミスミ</td><td>解説書・技術資料</td><td>購入・Web無料</td></tr>
+          <tr><td>JIS B 0021</td><td>幾何公差（GD&amp;T）</td><td>JSA・キーエンス・ミツトヨ</td><td>解説書・測定ガイド</td><td>購入・Web無料</td></tr>
+          <tr><td>JIS B 0401</td><td>寸法公差・はめあい</td><td>JSA・ミスミ・NSK/NTN</td><td>解説書・選定表</td><td>購入・Web無料</td></tr>
+          <tr><td>JIS B 0601</td><td>表面性状（粗さ）</td><td>JSA・ミツトヨ・キーエンス</td><td>解説書・測定ガイド</td><td>購入・Web無料</td></tr>
+          <tr><td>JIS G 3101/G 4051</td><td>構造用鋼・機械構造用鋼</td><td>日本製鉄・JFE・大同特殊鋼</td><td>材料カタログ</td><td>Web無料</td></tr>
+          <tr><td>JIS B 1512</td><td>転がり軸受</td><td>NSK・NTN・JTEKT・THK</td><td>技術カタログ</td><td>Web無料</td></tr>
+          <tr><td>JIS B 0205/0209</td><td>メートルねじ・公差</td><td>ミスミ・JFST・各ファスナーメーカー</td><td>設計ガイド</td><td>Web無料</td></tr>
+          <tr><td>JIS Z 3001</td><td>溶接用語</td><td>JWES・神戸製鋼・パナソニック</td><td>解説書・技術資料</td><td>購入・Web無料</td></tr>
+          <tr><td>JIS B 8830</td><td>クレーン一般</td><td>JCMA（クレーン協会）・厚生労働省</td><td>適用ガイド・通達</td><td>Web無料</td></tr>
+          <tr><td>JIS C 0508</td><td>機能安全（IEC 61508対応）</td><td>JEMIMA・IEC/TC65・メーカー各社</td><td>適用ガイド</td><td>購入・Web一部</td></tr>
+          <tr><td>JIS B 2402</td><td>オイルシール</td><td>NOK・ニチアス・Parker</td><td>技術カタログ</td><td>Web無料</td></tr>
+          <tr><td>JIS K 2220</td><td>グリース</td><td>昭和シェル・ENEOSルブリカンツ・協同油脂</td><td>製品技術資料</td><td>Web無料</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 活用のコツ：</strong>
+      取引先図面に記載された規格番号でまずJISCを参照し、適用方法に迷ったら
+      主要メーカーの技術カタログ（NSK・ミスミ・ミツトヨ等はWeb無料）を確認するのが最も効率的です。
+      深い解釈が必要な場合はJSA発行の<strong>JIS解説書</strong>（有償）が公式の参考文書となります。
+    </div>
+  </section>
+
+
+  <!-- ===== #26 熱処理規格 ===== -->
+  <section class="section" id="netsushori">
+    <div class="section-header">
+      <div class="section-icon netsushori">🔥</div>
+      <div>
+        <h2 class="section-title">熱処理関連規格<small>HEAT TREATMENT STANDARDS</small></h2>
+      </div>
+    </div>
+
+    <div class="industry-intro">
+      <strong>熱処理</strong>は鋼材の硬さ・靭性・耐摩耗性を制御する製造工程であり、
+      機械部品の品質・寿命に直結します。
+      日本ではJIS G・JIS B系の規格が中心となり、ISO 4885（国際語彙）や
+      SAE AMS（航空宇宙材料規格）との整合化も進んでいます。
+      発注図面には処理種別・硬さ範囲・有効硬化層深さを明記することが重要です。
+    </div>
+
+    <!-- 処理種別クイックリファレンス -->
+    <p class="dantai-subheading">⚡ 熱処理の種類と主要規格 クイックリファレンス</p>
+    <div class="netsushori-process-grid">
+      <div class="netsushori-process-item">
+        <div class="proc-name">焼なまし（Annealing）</div>
+        <div class="proc-jis">JIS G 0201（用語）</div>
+        <div class="proc-desc">加熱後ゆっくり冷却。残留応力除去・軟化・組織均質化。加工前処理として多用。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">焼ならし（Normalizing）</div>
+        <div class="proc-jis">JIS G 0201（用語）</div>
+        <div class="proc-desc">空冷により組織を標準化。機械的性質の均一化。鋳鋼・鍛鋼部品に多用。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">焼入れ（Quenching）</div>
+        <div class="proc-jis">JIS G 4051/4053</div>
+        <div class="proc-desc">加熱後急冷でマルテンサイト変態。高硬度を得る。焼戻しとセットで実施。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">焼戻し（Tempering）</div>
+        <div class="proc-jis">JIS G 4051/4053</div>
+        <div class="proc-desc">焼入れ後に再加熱して靭性を回復。硬さと靭性のバランスを調整。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">浸炭（Carburizing）</div>
+        <div class="proc-jis">JIS G 0557/JIS B 6912</div>
+        <div class="proc-desc">表面に炭素を浸透させ焼入れ。表面硬化・内部靭性保持。歯車・カム軸に多用。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">窒化（Nitriding）</div>
+        <div class="proc-jis">JIS G 0562/JIS B 6912</div>
+        <div class="proc-desc">窒素雰囲気中で表面硬化。変形が少なく精密部品に適す。耐摩耗・耐疲労向上。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">高周波焼入れ</div>
+        <div class="proc-jis">JIS G 0559</div>
+        <div class="proc-desc">高周波誘導加熱で局所焼入れ。必要部位のみ表面硬化。クランク軸・ピン類に最適。</div>
+      </div>
+      <div class="netsushori-process-item">
+        <div class="proc-name">真空熱処理</div>
+        <div class="proc-jis">JIS B 6914</div>
+        <div class="proc-desc">真空中で加熱し酸化・脱炭を防止。精密工具・金型の高品質処理に適する。</div>
+      </div>
+    </div>
+
+    <!-- 主要規格カード -->
+    <p class="dantai-subheading">📚 主要規格詳細</p>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 用語</span></div>
+        <h3 class="card-title">JIS G 0201 — 鉄鋼用語（熱処理）</h3>
+        <p class="card-desc">
+          熱処理に関する基本用語（焼なまし・焼入れ・焼戻し・浸炭・窒化など）を定義した規格。
+          熱処理仕様書・図面注記・試験成績書を作成する際の用語統一に必須。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">ISO / 用語</span></div>
+        <h3 class="card-title">ISO 4885 — 熱処理語彙（国際版）</h3>
+        <p class="card-desc">
+          鉄鋼材料の熱処理に関する国際的な用語定義規格。JIS G 0201 と対応しており、
+          海外サプライヤーへの発注仕様や輸出製品の図面注記に参照する。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 材料</span></div>
+        <h3 class="card-title">JIS G 4051 — 機械構造用炭素鋼鋼材</h3>
+        <p class="card-desc">
+          S10C〜S58C など機械構造用炭素鋼の成分・機械的性質・推奨熱処理条件を規定。
+          焼入れ・焼戻し硬さ範囲を材料選定の基準として使用。
+          S45C が最もよく使用される汎用材料。
+        </p>
+        <div class="card-footer">
+          <a class="card-official netsushori" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList" target="_blank" rel="noopener">🌐 JISC</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 材料</span></div>
+        <h3 class="card-title">JIS G 4053 — 機械構造用合金鋼鋼材</h3>
+        <p class="card-desc">
+          Cr鋼・Cr-Mo鋼・Ni-Cr-Mo鋼など合金鋼の成分・機械的性質を規定。
+          SCM415（浸炭用）、SCM440（焼入焼戻用）などが代表的で、
+          高負荷歯車・シャフト・ボルトに多用される。
+        </p>
+        <div class="card-footer">
+          <a class="card-official netsushori" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList" target="_blank" rel="noopener">🌐 JISC</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 試験</span></div>
+        <h3 class="card-title">JIS G 0557 — 鋼の浸炭硬化層深さ測定方法</h3>
+        <p class="card-desc">
+          浸炭焼入れ後の有効硬化層深さ（限界硬さ法 HV 550 など）の測定方法を規定。
+          歯車・カム・ピン類の品質検査において、硬化層深さの合否判定に使用する。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 試験</span></div>
+        <h3 class="card-title">JIS G 0559 — 高周波焼入れ硬化層深さ測定</h3>
+        <p class="card-desc">
+          高周波焼入れによる表面硬化層の深さ測定方法（硬さ分布法・断面マクロ法）を規定。
+          クランク軸・ピン・歯車の品質検査に適用される。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 試験</span></div>
+        <h3 class="card-title">JIS G 0562 — 鋼の窒化層深さ測定方法</h3>
+        <p class="card-desc">
+          窒化処理後の化合物層・拡散層の深さ測定方法を規定。
+          精密機械部品・金型の窒化品質管理に使用。
+          硬さプロファイル測定と断面顕微鏡観察の両方法を規定する。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS G / 試験</span></div>
+        <h3 class="card-title">JIS G 0561 — 鋼の焼入性試験（ジョミニー試験）</h3>
+        <p class="card-desc">
+          鋼の焼入性（ハルデナビリティ）をジョミニー一端焼入れ法で評価する試験方法。
+          鋼種選定・熱処理条件の検討に使用。焼入れ深さの予測に不可欠。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS B / 炉・設備</span></div>
+        <h3 class="card-title">JIS B 6901 — 熱処理炉通則</h3>
+        <p class="card-desc">
+          工業用熱処理炉の分類・性能・試験方法・安全要件を規定する通則。
+          炉温均一性（温度分布）・雰囲気制御・安全装置に関する要件が中心で、
+          AMS 2750（航空宇宙用）の国内参照規格として使われることもある。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">JIS B / 炉・設備</span></div>
+        <h3 class="card-title">JIS B 6914 — 真空熱処理炉</h3>
+        <p class="card-desc">
+          真空加熱炉の性能・構造・安全要件を規定。
+          到達真空度・温度均一性・冷却速度の要求事項を定め、
+          精密工具・金型・精密部品の無酸化熱処理品質管理に適用。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">SAE AMS / 航空宇宙</span></div>
+        <h3 class="card-title">SAE AMS 2759 — 鋼の熱処理（航空宇宙用）</h3>
+        <p class="card-desc">
+          SAE Internationalが策定する航空宇宙分野向け鋼の熱処理標準。
+          プロセス管理・炉温均一性・クエンチ媒体・ハードネス要件など詳細な要求事項を規定。
+          航空機部品受注時に顧客指定で要求されることがある。
+        </p>
+        <div class="card-footer">
+          <a class="card-official netsushori" href="https://www.sae.org/standards/content/ams2759/" target="_blank" rel="noopener">🌐 SAE AMS</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag netsushori">ISO / 鋼材</span></div>
+        <h3 class="card-title">ISO 683 — 熱処理用鋼・合金鋼・快削鋼</h3>
+        <p class="card-desc">
+          焼入れ焼戻し用鋼・浸炭用鋼・窒化用鋼などの化学成分・熱処理条件を規定する国際規格群（多パート）。
+          輸出品・海外調達時に JIS G 4051/4053 の国際版として参照する。
+        </p>
+      </div>
+
+    </div><!-- /cards-grid -->
+
+    <!-- 熱処理規格一覧表 -->
+    <p class="dantai-subheading">📋 熱処理関連規格 一覧</p>
+    <div class="std-table-wrapper netsushori">
+      <table>
+        <thead>
+          <tr><th>規格番号</th><th>規格名</th><th>分類</th><th>主な用途・内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>JIS G 0201</td><td>鉄鋼用語（熱処理）</td><td>用語</td><td>焼入れ・焼戻し・浸炭等の用語定義</td></tr>
+          <tr><td>ISO 4885</td><td>熱処理語彙</td><td>用語（国際）</td><td>JIS G 0201 の国際版</td></tr>
+          <tr><td>JIS G 4051</td><td>機械構造用炭素鋼鋼材</td><td>材料</td><td>S10C〜S58C 成分・熱処理仕様</td></tr>
+          <tr><td>JIS G 4053</td><td>機械構造用合金鋼鋼材</td><td>材料</td><td>SCM・SNCM・SCr 等の成分・熱処理仕様</td></tr>
+          <tr><td>JIS G 4104</td><td>クロム鋼鋼材</td><td>材料</td><td>SCr415/420/440 等 浸炭用・焼入用</td></tr>
+          <tr><td>JIS G 0557</td><td>浸炭硬化層深さ測定</td><td>試験・測定</td><td>有効硬化層深さ（HV550基準）の測定法</td></tr>
+          <tr><td>JIS G 0559</td><td>高周波焼入れ硬化層深さ測定</td><td>試験・測定</td><td>表面硬化層の深さ測定方法</td></tr>
+          <tr><td>JIS G 0562</td><td>窒化層深さ測定</td><td>試験・測定</td><td>化合物層・拡散層の深さ測定法</td></tr>
+          <tr><td>JIS G 0561</td><td>鋼の焼入性試験（ジョミニー）</td><td>試験・測定</td><td>焼入れ深さ特性の評価</td></tr>
+          <tr><td>JIS B 6901</td><td>熱処理炉通則</td><td>設備</td><td>炉の分類・性能・安全要件</td></tr>
+          <tr><td>JIS B 6914</td><td>真空熱処理炉</td><td>設備</td><td>真空炉の性能・構造・安全要件</td></tr>
+          <tr><td>ISO 683</td><td>熱処理用鋼（多パート）</td><td>材料（国際）</td><td>JIS G 4051/4053 の国際対応版</td></tr>
+          <tr><td>SAE AMS 2759</td><td>鋼の熱処理（航空宇宙）</td><td>業界規格</td><td>航空部品向け詳細プロセス管理要件</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 発注・図面記入のポイント：</strong>
+      熱処理を指定する場合は「<strong>処理種別 / 硬さ範囲（HRC/HV） / 有効硬化層深さ（mm）</strong>」を図面または仕様書に明記してください。
+      例：「浸炭焼入焼戻し、表面硬度 HRC 58〜62、有効硬化層深さ 0.5〜0.8mm（JIS G 0557 による）」
+    </div>
+  </section>
+
+
+  <!-- ===== #27 シール・潤滑油規格 ===== -->
+  <section class="section" id="oil">
+    <div class="section-header">
+      <div class="section-icon oil">🛢️</div>
+      <div>
+        <h2 class="section-title">シール・オイル・潤滑剤 規格<small>SEAL / OIL / LUBRICANT STANDARDS</small></h2>
+      </div>
+    </div>
+
+    <div class="industry-intro">
+      オイルシール・Oリング・グリース・潤滑油は機械の摺動部・回転部のシールと潤滑を担う重要部品であり、
+      <strong>JIS B（機械要素）・JIS K（石油製品）</strong>を中心に規格が整備されています。
+      また粘度分類（ISO VG・SAE 番号）は国際共通の指標として設計・調達・保全で広く使用されています。
+    </div>
+
+    <!-- シール規格 -->
+    <p class="dantai-subheading">🔵 シール・ガスケット規格</p>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS B / シール</span></div>
+        <h3 class="card-title">JIS B 2402 — オイルシール（回転軸用リップシール）</h3>
+        <p class="card-desc">
+          回転軸用リップシール（オイルシール）の形式・寸法・材料・試験方法を規定。
+          骨格形式（S・SS・V・VS型など）と軸径・ハウジング内径の標準寸法系列を定める。
+          JIS B 2402-1（形状・寸法）と JIS B 2402-2（試験方法）の2パート構成。
+        </p>
+        <div class="card-footer">
+          <a class="card-official oil" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList" target="_blank" rel="noopener">🌐 JISC</a>
+          <a class="card-official oil" href="https://www.nok.co.jp/product/sealing/" target="_blank" rel="noopener">🌐 NOK技術資料</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">ISO / シール</span></div>
+        <h3 class="card-title">ISO 6194 — 回転軸用リップシール（国際版）</h3>
+        <p class="card-desc">
+          JIS B 2402 の国際対応版。寸法系列・材料・試験方法（耐圧・耐熱・耐油試験）を規定。
+          海外メーカーからの調達・輸出向け仕様書ではこちらを参照する。
+          Part 1（寸法・公差）〜Part 5（表面粗さ要求）の多パート構成。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS B / Oリング</span></div>
+        <h3 class="card-title">JIS B 2401 — Oリング</h3>
+        <p class="card-desc">
+          固定用・運動用（往復・回転）Oリングの形状・寸法・材料（ニトリル・シリコン・フッ素ゴム等）・
+          試験方法を規定。P系列（運動用）・G系列（固定用）・V系列（真空用）の3シリーズ。
+          溝寸法・圧縮代も規定されている。
+        </p>
+        <div class="card-footer">
+          <a class="card-official oil" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList" target="_blank" rel="noopener">🌐 JISC</a>
+          <a class="card-official oil" href="https://www.nok.co.jp/product/sealing/" target="_blank" rel="noopener">🌐 NOK技術資料</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">ISO / Oリング</span></div>
+        <h3 class="card-title">ISO 3601 — Oリング（国際版）</h3>
+        <p class="card-desc">
+          JIS B 2401 の国際対応版（ISO 3601-1〜5）。内径・断面径の標準寸法系列（ISO 3601-1）、
+          品質等級（3601-3）、表面欠陥（3601-4）を規定。
+          海外調達・輸出仕様書の作成時に参照。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS B / Uパッキン</span></div>
+        <h3 class="card-title">JIS B 2407 — 油圧・空気圧用パッキン</h3>
+        <p class="card-desc">
+          油圧・空気圧シリンダ用 U パッキン・ダストシール・ピストンシールの寸法・材料・試験方法を規定。
+          JIS B 8354（油圧シリンダ）と組み合わせて設計に使用。
+          ISO 5597（油圧シリンダ用溝寸法）と整合化されている。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS Z / ガスケット</span></div>
+        <h3 class="card-title">JIS B 2490 — 配管フランジ用ガスケット</h3>
+        <p class="card-desc">
+          配管フランジ接合部に使用するガスケット（非金属・金属・セミメタリック）の
+          種類・寸法・材料・試験方法を規定。
+          JIS B 2220（鋼製管フランジ）と組み合わせて配管設計に使用。
+        </p>
+      </div>
+
+    </div><!-- /cards-grid シール -->
+
+    <!-- 潤滑油・グリース -->
+    <p class="dantai-subheading">🛢️ 潤滑油・グリース規格</p>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS K / グリース</span></div>
+        <h3 class="card-title">JIS K 2220 — グリース</h3>
+        <p class="card-desc">
+          工業用グリースの品質・試験方法を規定。
+          ちょう度（NLGI番号に相当）・滴点・離油度・機械安定性・防錆性を評価項目として規定。
+          増ちょう剤（リチウム・ウレア・カルシウム系等）による特性差異も解説対象。
+        </p>
+        <div class="card-footer">
+          <a class="card-official oil" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList" target="_blank" rel="noopener">🌐 JISC</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS K / 油圧作動油</span></div>
+        <h3 class="card-title">JIS K 2213 — タービン油 / JIS K 2219 — 油圧作動油</h3>
+        <p class="card-desc">
+          <strong>JIS K 2213</strong>：蒸気タービン・ガスタービン・油圧機器に使用するタービン油の品質規格。酸化安定性・防錆性・消泡性を規定。<br>
+          <strong>JIS K 2219</strong>：油圧装置用作動油の品質規格。ISO VG 46等の粘度グレードごとの要件を規定。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS K / ギヤ油</span></div>
+        <h3 class="card-title">JIS K 2215 — 工業用ギヤ油</h3>
+        <p class="card-desc">
+          歯車装置に使用する工業用ギヤ油の品質規格。
+          ISO VG 68〜1000 の粘度グレードに対応した耐荷重性・酸化安定性・泡立ち性を規定。
+          AGMA（米国歯車製造者協会）グレードとの換算表も一般に参照される。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS K / 防錆油</span></div>
+        <h3 class="card-title">JIS K 2246 — 防錆油</h3>
+        <p class="card-desc">
+          金属製品の防錆を目的とした工業用防錆油の品質・試験方法を規定。
+          1〜6種の分類（指紋除去型・溶剤希釈型・潤滑防錆型等）があり、
+          保管期間・環境条件に応じた選定指針を提供。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JIS K / 切削油</span></div>
+        <h3 class="card-title">JIS K 2241 — 切削油剤</h3>
+        <p class="card-desc">
+          切削・研削加工用の油剤（水溶性・不水溶性）の品質・試験方法を規定。
+          潤滑性・冷却性・防錆性・エマルジョン安定性を評価。
+          加工方法（旋削・フライス・研削）に応じた選定に使用。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">JASO / エンジン油</span></div>
+        <h3 class="card-title">JASO M 316 — 二輪車用4サイクルエンジン油</h3>
+        <p class="card-desc">
+          摩擦特性（クラッチ滑り試験・JASO T 903 摩擦指数）で MA/MB に分類する
+          二輪車専用エンジン油規格。ウェットクラッチ付き車両の潤滑油選定に必須。
+          API/ILSACの汎用分類では二輪専用要件をカバーできないため設けられた。
+        </p>
+        <div class="card-footer">
+          <a class="card-official oil" href="https://www.jsae.or.jp/std/index.html" target="_blank" rel="noopener">🌐 JSAE</a>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid 潤滑油 -->
+
+    <!-- 粘度分類 -->
+    <p class="dantai-subheading">📊 粘度分類規格（ISO VG / SAE / NLGI）</p>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">ISO / 粘度分類</span></div>
+        <h3 class="card-title">ISO 3448 — 工業用潤滑油 粘度分類（ISO VG）</h3>
+        <p class="card-desc">
+          40℃における動粘度（mm²/s）でグレード分類する工業油の国際粘度分類体系。
+          VG 2・VG 5・VG 10・VG 22・VG 32・VG 46・VG 68・VG 100・VG 150・VG 220・VG 320・VG 460・VG 680・VG 1000 の系列。
+          油圧・ギヤ・コンプレッサーなど幅広い工業用油に適用。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">SAE / 粘度分類</span></div>
+        <h3 class="card-title">SAE J300 — エンジン油粘度分類</h3>
+        <p class="card-desc">
+          自動車・建設機械エンジン油の粘度を低温起動性と高温粘度で分類。
+          0W/5W/10W/15W/20W/25W の冬用（W：Winter）と 20/30/40/50/60 の夏用を組み合わせた
+          マルチグレード（例：5W-30）が現在の主流。
+        </p>
+        <div class="card-footer">
+          <a class="card-official oil" href="https://www.sae.org/standards/content/j300_202105/" target="_blank" rel="noopener">🌐 SAE J300</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">SAE / 粘度分類</span></div>
+        <h3 class="card-title">SAE J306 — ギヤ油粘度分類</h3>
+        <p class="card-desc">
+          自動車・建設機械のトランスミッション・デファレンシャルギヤ用潤滑油の粘度分類。
+          70W・75W・80W・85W（低温用）と 90・140・250（高温用）のシリーズ。
+          工業用 ISO VG との換算には注意が必要（試験温度が異なる）。
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-tag oil">NLGI / 分類</span></div>
+        <h3 class="card-title">NLGI ちょう度分類（グリース硬さ）</h3>
+        <p class="card-desc">
+          米国潤滑グリース協会（NLGI）が定めるグリース硬さ（ちょう度）の等級分類。
+          000（最も柔らかい）〜6（最も硬い）の9段階。
+          汎用軸受グリースは <strong>NLGI No.2</strong>（ちょう度 265〜295）が標準的で最も広く使用される。
+        </p>
+      </div>
+
+    </div><!-- /cards-grid 粘度 -->
+
+    <!-- シール・オイル規格一覧表 -->
+    <p class="dantai-subheading">📋 シール・オイル関連規格 一覧</p>
+    <div class="std-table-wrapper oil">
+      <table>
+        <thead>
+          <tr><th>規格番号</th><th>規格名</th><th>分類</th><th>主な内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>JIS B 2402</td><td>オイルシール（回転軸用リップシール）</td><td>シール</td><td>形式・寸法・材料・試験方法</td></tr>
+          <tr><td>ISO 6194</td><td>回転軸用リップシール</td><td>シール（国際）</td><td>JIS B 2402の国際版、Part1〜5</td></tr>
+          <tr><td>JIS B 2401</td><td>Oリング</td><td>シール</td><td>P/G/V系列の寸法・材料・試験</td></tr>
+          <tr><td>ISO 3601</td><td>Oリング</td><td>シール（国際）</td><td>国際寸法系列・品質等級</td></tr>
+          <tr><td>JIS B 2407</td><td>油圧・空気圧用パッキン</td><td>シール</td><td>Uパッキン・ダストシール</td></tr>
+          <tr><td>JIS B 2490</td><td>配管フランジ用ガスケット</td><td>ガスケット</td><td>非金属・金属・セミメタリック</td></tr>
+          <tr><td>JIS K 2220</td><td>グリース</td><td>潤滑剤</td><td>ちょう度・滴点・防錆性試験</td></tr>
+          <tr><td>JIS K 2213</td><td>タービン油</td><td>潤滑油</td><td>タービン・油圧機器用油の品質</td></tr>
+          <tr><td>JIS K 2219</td><td>油圧作動油</td><td>潤滑油</td><td>油圧装置用作動油の品質規格</td></tr>
+          <tr><td>JIS K 2215</td><td>工業用ギヤ油</td><td>潤滑油</td><td>歯車装置用潤滑油の品質</td></tr>
+          <tr><td>JIS K 2246</td><td>防錆油</td><td>潤滑油</td><td>1〜6種の防錆油品質・試験</td></tr>
+          <tr><td>JIS K 2241</td><td>切削油剤</td><td>潤滑油</td><td>水溶性・不水溶性の品質・試験</td></tr>
+          <tr><td>ISO 3448</td><td>工業用潤滑油粘度分類（ISO VG）</td><td>粘度分類</td><td>40℃動粘度による VG 系列分類</td></tr>
+          <tr><td>SAE J300</td><td>エンジン油粘度分類</td><td>粘度分類</td><td>自動車エンジン油 0W〜60 系列</td></tr>
+          <tr><td>SAE J306</td><td>ギヤ油粘度分類</td><td>粘度分類</td><td>ギヤ油 70W〜250 系列</td></tr>
+          <tr><td>JASO M 316</td><td>二輪車用4サイクルエンジン油</td><td>業界規格</td><td>MA/MB 摩擦特性分類</td></tr>
+          <tr><td>NLGI 分類</td><td>グリースちょう度等級</td><td>業界規格</td><td>No.000〜No.6 の9段階</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 選定・交換のポイント：</strong>
+      オイルシールの軸接触面は<strong>JIS B 0601</strong>の表面粗さ Ra 0.2〜0.8μm が推奨されます。
+      グリースは<strong>増ちょう剤の相溶性</strong>に注意し、異種グリースの混合は原則避けてください。
+      潤滑油の粘度グレードは機器メーカーの指定（ISO VG 番号）を優先し、SAE 番号との混同に注意が必要です。
+    </div>
   </section>
 
 

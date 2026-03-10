@@ -1558,25 +1558,34 @@ footer a:hover {
 }
 .modal-timeline-content strong { color: var(--primary); margin-right: 4px; }
 
-/* ===== 産業別セクション（ウィンチ・ホイスト / 搬送・マテハン / 加工 / 団体規格） ===== */
+/* ===== 産業別セクション ===== */
 :root {
-  --accent-winch:   #c0611a;
-  --accent-matehan: #0097a7;
-  --accent-kakou:   #455a64;
-  --accent-dantai:  #5c3d8f;
+  --accent-winch:      #c0611a;
+  --accent-matehan:    #0097a7;
+  --accent-kakou:      #455a64;
+  --accent-dantai:     #5c3d8f;
+  --accent-jisguide:   #1565c0;
+  --accent-netsushori: #b71c1c;
+  --accent-oil:        #5d4037;
 }
-.section-icon.winch   { background: #fef0e6; color: var(--accent-winch); }
-.section-icon.matehan { background: #e0f7fa; color: var(--accent-matehan); }
-.section-icon.kakou   { background: #eceff1; color: var(--accent-kakou); }
-.section-icon.dantai  { background: #f3eeff; color: var(--accent-dantai); }
+.section-icon.winch      { background: #fef0e6; color: var(--accent-winch); }
+.section-icon.matehan   { background: #e0f7fa; color: var(--accent-matehan); }
+.section-icon.kakou     { background: #eceff1; color: var(--accent-kakou); }
+.section-icon.dantai    { background: #f3eeff; color: var(--accent-dantai); }
+.section-icon.jisguide  { background: #e3f2fd; color: var(--accent-jisguide); }
+.section-icon.netsushori{ background: #fbe9e7; color: var(--accent-netsushori); }
+.section-icon.oil       { background: #efebe9; color: var(--accent-oil); }
 
-.card-tag.winch   { background: #fef0e6; color: var(--accent-winch); }
-.card-tag.matehan { background: #e0f7fa; color: var(--accent-matehan); }
-.card-tag.kakou   { background: #eceff1; color: var(--accent-kakou); }
-.card-tag.dantai  { background: #f3eeff; color: var(--accent-dantai); }
-.card-tag.dantai-dom  { background: #ede7f6; color: #4527a0; }
-.card-tag.dantai-ovs  { background: #e8eaf6; color: #283593; }
-.card-tag.dantai-sha  { background: #fce4ec; color: #880e4f; }
+.card-tag.winch      { background: #fef0e6; color: var(--accent-winch); }
+.card-tag.matehan    { background: #e0f7fa; color: var(--accent-matehan); }
+.card-tag.kakou      { background: #eceff1; color: var(--accent-kakou); }
+.card-tag.dantai     { background: #f3eeff; color: var(--accent-dantai); }
+.card-tag.dantai-dom { background: #ede7f6; color: #4527a0; }
+.card-tag.dantai-ovs { background: #e8eaf6; color: #283593; }
+.card-tag.dantai-sha { background: #fce4ec; color: #880e4f; }
+.card-tag.jisguide   { background: #e3f2fd; color: var(--accent-jisguide); }
+.card-tag.netsushori { background: #fbe9e7; color: var(--accent-netsushori); }
+.card-tag.oil        { background: #efebe9; color: var(--accent-oil); }
 
 .card-official.winch         { color: var(--accent-winch);   border-color: var(--accent-winch); }
 .card-official.winch:hover   { background: var(--accent-winch);   color: #fff; }
@@ -1584,8 +1593,14 @@ footer a:hover {
 .card-official.matehan:hover { background: var(--accent-matehan); color: #fff; }
 .card-official.kakou         { color: var(--accent-kakou);   border-color: var(--accent-kakou); }
 .card-official.kakou:hover   { background: var(--accent-kakou);   color: #fff; }
-.card-official.dantai        { color: var(--accent-dantai);  border-color: var(--accent-dantai); }
-.card-official.dantai:hover  { background: var(--accent-dantai);  color: #fff; }
+.card-official.dantai           { color: var(--accent-dantai);     border-color: var(--accent-dantai); }
+.card-official.dantai:hover     { background: var(--accent-dantai);     color: #fff; }
+.card-official.jisguide         { color: var(--accent-jisguide);   border-color: var(--accent-jisguide); }
+.card-official.jisguide:hover   { background: var(--accent-jisguide);   color: #fff; }
+.card-official.netsushori       { color: var(--accent-netsushori); border-color: var(--accent-netsushori); }
+.card-official.netsushori:hover { background: var(--accent-netsushori); color: #fff; }
+.card-official.oil              { color: var(--accent-oil);         border-color: var(--accent-oil); }
+.card-official.oil:hover        { background: var(--accent-oil);         color: #fff; }
 
 /* 団体規格セクション専用 — タイプ別ラベル */
 .dantai-type-badge {
@@ -1648,7 +1663,107 @@ footer a:hover {
 .std-table-wrapper.winch thead   { background: linear-gradient(135deg, var(--accent-winch) 0%, #e07b30 100%); }
 .std-table-wrapper.matehan thead { background: linear-gradient(135deg, var(--accent-matehan) 0%, #00bcd4 100%); }
 .std-table-wrapper.kakou thead   { background: linear-gradient(135deg, var(--accent-kakou) 0%, #78909c 100%); }
-.std-table-wrapper.dantai thead  { background: linear-gradient(135deg, var(--accent-dantai) 0%, #7b52b9 100%); }
+.std-table-wrapper.dantai thead     { background: linear-gradient(135deg, var(--accent-dantai)     0%, #7b52b9 100%); }
+.std-table-wrapper.jisguide thead   { background: linear-gradient(135deg, var(--accent-jisguide)   0%, #1976d2 100%); }
+.std-table-wrapper.netsushori thead { background: linear-gradient(135deg, var(--accent-netsushori) 0%, #d32f2f 100%); }
+.std-table-wrapper.oil thead        { background: linear-gradient(135deg, var(--accent-oil)         0%, #795548 100%); }
+
+/* JIS解説セクション専用 — クロスリファレンスカード */
+.jisguide-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.jisguide-card-head {
+  background: linear-gradient(90deg, #e3f2fd 0%, #f0f8ff 100%);
+  border-bottom: 2px solid #bbdefb;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.jisguide-card-head .jis-num {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--accent-jisguide);
+  letter-spacing: 0.04em;
+}
+.jisguide-card-head .jis-title {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 600;
+}
+.jisguide-card-body {
+  padding: 12px 18px 14px;
+}
+.jisguide-card-body .guide-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.jisguide-card-body .guide-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.jisguide-card-body .guide-list li::before {
+  content: '▷';
+  color: var(--accent-jisguide);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.guide-org-badge {
+  display: inline-block;
+  font-size: 0.67rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #bbdefb;
+  color: var(--accent-jisguide);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* 熱処理セクション専用 */
+.netsushori-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.netsushori-process-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent-netsushori);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 0.82rem;
+}
+.netsushori-process-item .proc-name {
+  font-weight: 700;
+  color: var(--accent-netsushori);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+.netsushori-process-item .proc-jis {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.netsushori-process-item .proc-desc {
+  color: var(--text);
+  line-height: 1.5;
+}
 
 /* モーダル内 tipBox */
 .modal-tip-box {
