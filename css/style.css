@@ -1669,6 +1669,7 @@ footer a:hover {
   --accent-jisguide:   #1565c0;
   --accent-netsushori: #b71c1c;
   --accent-oil:        #5d4037;
+  --accent-gear:       #2e7d32;
 }
 .section-icon.winch      { background: #fef0e6; color: var(--accent-winch); }
 .section-icon.matehan   { background: #e0f7fa; color: var(--accent-matehan); }
@@ -1677,6 +1678,7 @@ footer a:hover {
 .section-icon.jisguide  { background: #e3f2fd; color: var(--accent-jisguide); }
 .section-icon.netsushori{ background: #fbe9e7; color: var(--accent-netsushori); }
 .section-icon.oil       { background: #efebe9; color: var(--accent-oil); }
+.section-icon.gear      { background: #e8f5e9; color: var(--accent-gear); }
 
 .card-tag.winch      { background: #fef0e6; color: var(--accent-winch); }
 .card-tag.matehan    { background: #e0f7fa; color: var(--accent-matehan); }
@@ -1688,6 +1690,7 @@ footer a:hover {
 .card-tag.jisguide   { background: #e3f2fd; color: var(--accent-jisguide); }
 .card-tag.netsushori { background: #fbe9e7; color: var(--accent-netsushori); }
 .card-tag.oil        { background: #efebe9; color: var(--accent-oil); }
+.card-tag.gear       { background: #e8f5e9; color: var(--accent-gear); }
 
 .card-official.winch         { color: var(--accent-winch);   border-color: var(--accent-winch); }
 .card-official.winch:hover   { background: var(--accent-winch);   color: #fff; }
@@ -1703,6 +1706,8 @@ footer a:hover {
 .card-official.netsushori:hover { background: var(--accent-netsushori); color: #fff; }
 .card-official.oil              { color: var(--accent-oil);         border-color: var(--accent-oil); }
 .card-official.oil:hover        { background: var(--accent-oil);         color: #fff; }
+.card-official.gear             { color: var(--accent-gear);        border-color: var(--accent-gear); }
+.card-official.gear:hover       { background: var(--accent-gear);        color: #fff; }
 
 /* 団体規格セクション専用 — タイプ別ラベル */
 .dantai-type-badge {
@@ -1766,6 +1771,7 @@ footer a:hover {
 .std-table-wrapper.matehan thead { background: linear-gradient(135deg, var(--accent-matehan) 0%, #00bcd4 100%); }
 .std-table-wrapper.kakou thead   { background: linear-gradient(135deg, var(--accent-kakou) 0%, #78909c 100%); }
 .std-table-wrapper.dantai thead     { background: linear-gradient(135deg, var(--accent-dantai)     0%, #7b52b9 100%); }
+.std-table-wrapper.gear thead       { background: linear-gradient(135deg, var(--accent-gear)       0%, #43a047 100%); }
 .std-table-wrapper.jisguide thead   { background: linear-gradient(135deg, var(--accent-jisguide)   0%, #1976d2 100%); }
 .std-table-wrapper.netsushori thead { background: linear-gradient(135deg, var(--accent-netsushori) 0%, #d32f2f 100%); }
 .std-table-wrapper.oil thead        { background: linear-gradient(135deg, var(--accent-oil)         0%, #795548 100%); }
